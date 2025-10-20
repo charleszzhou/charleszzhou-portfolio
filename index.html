@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Weiran (Charles) Zhou — Mechanical Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mechanical Engineering portfolio — Dynamical Systems & Controls, Design, Bioengineering.">
+  <meta property="og:title" content="Weiran (Charles) Zhou — Mechanical Engineer">
+  <meta property="og:description" content="Autonomous submersible, CubeMars CAN GUI, Jumper Robot, Torsional Stiffness Rig.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="./">Weiran (Charles) Zhou</a>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Mechanical Engineer</h1>
+        <p>Dynamical Systems & Controls · Design · Bioengineering</p>
+        <p class="sub">I build systems that think, adapt, and move — from autonomous submersibles to soft robotic actuators.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn outline" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/img/hero-placeholder.jpg" alt="Portfolio hero image">
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="grid">
+          <a class="card" href="projects/submersible.html">
+            <img src="assets/img/submersible-placeholder.jpg" alt="Submersible Robot">
+            <div class="card-body">
+              <h3>Autonomous Submersible Robot</h3>
+              <p>PID-controlled syringe-pump buoyancy · Wi-Fi telemetry · 17 ft waterproof housing · <em>Most Technical Award</em></p>
+              <p class="meta">SolidWorks · ESP32 · MATLAB</p>
+            </div>
+          </a>
+
+          <a class="card" href="projects/cubemars_gui.html">
+            <img src="assets/img/cubemars-placeholder.jpg" alt="CubeMars GUI">
+            <div class="card-body">
+              <h3>CubeMars Motor Control GUI</h3>
+              <p>Python GUI for CAN-based MIT-mode control · live tuning & logging · safety watchdog</p>
+              <p class="meta">Python · Tkinter · CAN</p>
+            </div>
+          </a>
+
+          <a class="card" href="projects/jumper_robot.html">
+            <img src="assets/img/jumper-placeholder.jpg" alt="Jumper Robot">
+            <div class="card-body">
+              <h3>Jumper Robot</h3>
+              <p>36″ vertical jump via optimized spring-motor actuation · <em>2nd Place (UCSB ME153)</em></p>
+              <p class="meta">SolidWorks · Dynamics · MATLAB</p>
+            </div>
+          </a>
+
+          <a class="card" href="projects/torsional_rig.html">
+            <img src="assets/img/torsional-placeholder.jpg" alt="Torsional Stiffness Rig">
+            <div class="card-body">
+              <h3>Torsional Stiffness Apparatus</h3>
+              <p>0.1 Nm/deg 3D-printed rig replacing a $12K torque sensor · &lt; ±5% variance</p>
+              <p class="meta">SolidWorks · Testing · Data Analysis</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <ul class="tags">
+          <li>Python</li><li>MATLAB</li><li>C++</li><li>Simulink</li><li>SolidWorks (Certified)</li>
+          <li>FEA</li><li>GD&amp;T</li><li>3D Printing</li><li>CAN Bus</li><li>Tkinter GUI</li>
+          <li>Microfluidics (HVS)</li><li>LabVIEW</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>B.S. Mechanical Engineering @ UCSB (’26). Specializing in <strong>Dynamical Systems & Controls</strong> and <strong>MEMS</strong>. I integrate mechanical design, intelligent control, and experimental validation to build responsive robotic systems.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:weiranzhou@ucsb.edu">weiranzhou@ucsb.edu</a> · LinkedIn: <a href="https://www.linkedin.com/in/charleszzhou" target="_blank" rel="noopener">charleszzhou</a></p>
+        <!-- Optional: add links to Resume/Portfolio PDFs if you upload them at repo root -->
+        <!-- <p><a href="/Zhou_Resume.pdf">Resume (PDF)</a> · <a href="/Portfolio.pdf">Portfolio (PDF)</a></p> -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Weiran (Charles) Zhou</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
