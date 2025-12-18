@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Sampling Frequency &amp; DC Motor Control — Charles Zhou</title>
+  <title>MEMS Resonator Design (Comb-Drive Mass Sensor) — Charles Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Design and sensitivity analysis of a comb-drive MEMS resonator for mass sensing with COMSOL-informed effective mass and stiffness extraction.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">← Back to Portfolio</a>
@@ -16,77 +16,69 @@
 
   <main class="section">
     <div class="container narrow">
-
-      <h1>How Sampling Frequency Shapes DC Motor Control Performance</h1>
+      <h1>MEMS Resonator Design (Comb-Drive Mass Sensor)</h1>
       <p class="lead">
-        Experimental study of discrete-time control effects on RMS tracking error and transient response
+        Comb-drive resonator for bacterial mass detection · analytical feasibility + sensitivity modeling ·
+        COMSOL-backed <em>k</em> and <em>m<sub>eff</sub></em> extraction
       </p>
 
       <h2>Objective</h2>
       <p>
-        Quantify how controller sampling frequency influences closed-loop DC motor speed regulation,
-        focusing on tracking accuracy and transient behavior in a discrete-time PI controller.
+        Design a silicon MEMS resonator capable of detecting picogram-scale mass changes via frequency shift,
+        under strict electrical, mechanical, and fabrication constraints (e.g., ≤100&nbsp;V, ~1&nbsp;µm minimum features).
       </p>
 
-      <h2>Experimental Setup</h2>
+      <h2>Context</h2>
       <ul>
-        <li>Discrete-time PI controller implemented on a microcontroller</li>
-        <li>DC motor with quadrature encoder velocity feedback</li>
-        <li>Sampling frequencies ranging from 10 Hz to 100 Hz</li>
-        <li>Step input from 0 → 4 rad/s with high-rate data logging</li>
+        <li>Target organism: <em>P. gingivalis</em> (typical mass ~0.5–1.0&nbsp;pg)</li>
+        <li>System concept: disposable saliva cartridge + reusable reader (this project focuses on the MEMS resonator)</li>
       </ul>
 
-      <h2>Key Results</h2>
+      <h2>Outcome</h2>
       <ul>
-        <li>RMS tracking error decreases monotonically with sampling frequency</li>
-        <li>Low sampling rates (10–20 Hz) exhibit oscillations and sluggish response</li>
-        <li>Performance gains diminish beyond ~50 Hz, indicating bandwidth limits</li>
-        <li>Higher sampling frequencies reduce overshoot and settling time variability</li>
+        <li>Established feasibility constraints linking detectability to <em>m<sub>eff</sub></em>, and actuation/stability to <em>k</em></li>
+        <li>Identified why slide-level “lumped” approximations break for this geometry (spring inertia and mode shape are non-negligible)</li>
+        <li>Validated a COMSOL-backed design point with extracted parameters and detectability margin ≥ 1</li>
+      </ul>
+
+      <h2>Highlights</h2>
+      <ul>
+        <li><strong>Why COMSOL is required:</strong> distributed stiffness, mode-shape-dependent inertia, and anchor compliance materially affect <em>k</em> and <em>m<sub>eff</sub></em></li>
+        <li><strong>Applicability check:</strong> “<em>m<sub>eff</sub></em> ≈ 0.24 m<sub>proofmass</sub></em>” only holds when proof mass ≫ 10× spring mass (not feasible under this design’s k/size constraints)</li>
+        <li><strong>COMSOL extraction:</strong> use fundamental mode + energy/participation to compute <em>m<sub>eff</sub></em> and <em>k</em><sub>eff</sub> consistently for sensitivity calculations</li>
       </ul>
 
       <h2>Tools &amp; Skills</h2>
-      <p>
-        Embedded Control · Discrete-Time Systems · DC Motors · PI Control ·
-        Data Logging · MATLAB · Experimental Analysis
-      </p>
+      <p>COMSOL · MEMS Modeling · Dynamics &amp; Vibrations · Sensitivity Analysis · Design Tradeoffs</p>
 
       <h2>Media</h2>
 
-      <div class="pdf-block">
-        <h3>Project slides (PDF)</h3>
+      <h3>Project slides (PDF)</h3>
+      <p class="meta">
+        <a class="btn" href="../assets/pdf/ResonatorDesign.pdf" target="_blank" rel="noopener">Open Slides (PDF)</a>
+        <a class="btn outline" href="../assets/pdf/ResonatorDesign.pdf" download>Download</a>
+      </p>
 
-        <div class="pdf-actions">
-          <a class="btn" href="../assets/pdf/SamplingFreqExperiment.pdf" target="_blank" rel="noopener">
-            Open Slides (PDF)
-          </a>
-          <a class="btn outline" href="../assets/pdf/SamplingFreqExperiment.pdf" download>
-            Download
-          </a>
-        </div>
-
-      <div class="video">
+      <!-- Inline PDF embed (same style/structure as your COMSOL project page) -->
+      <div class="video" style="padding-top: 140%; margin-top: 14px;">
         <iframe
-          src="../assets/pdf/SamplingFreqExperiment.pdf#view=FitH"
-          title="Sampling Frequency Experiment Slides (PDF)"
-          allow="fullscreen"
+          src="../assets/pdf/ResonatorDesign.pdf#view=FitH"
+          title="MEMS Resonator Design Slides (PDF)"
+          allowfullscreen
           loading="lazy">
         </iframe>
-
-        <p class="meta">If the embedded viewer doesn’t load, use “Open Slides (PDF)”.</p>
       </div>
+      <p class="meta">If the PDF preview doesn’t render on some browsers, use “Open Slides (PDF)”.</p>
 
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Weiran (Charles) Zhou</p>
-    </div>
+    <div class="container"><p>© <span id="year"></span> Weiran (Charles) Zhou</p></div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
