@@ -96,7 +96,7 @@ code {
 
 .hero-media img {
   width: 100%;
-  height: clamp(240px, 42vw, 420px); /* banner height */
+  height: 100%; /* banner height */
   object-fit: cover;
   border-radius: 0;
   box-shadow: none;
