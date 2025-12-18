@@ -1,43 +1,92 @@
-<h2>Media</h2>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CubeMars Motor Control GUI — Charles Zhou</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/charleszhou-portfolio/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">← Back to Portfolio</a>
+    </div>
+  </header>
 
-<h3>Multi-motor control (Position Mode)</h3>
-<div class="video">
-  <iframe
-    src="https://www.youtube.com/watch?v=If_Ep2qtppc"
-    title="Multi-motor control using position mode"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</div>
-<p class="meta">
-  <a href="https://www.youtube.com/watch?v=If_Ep2qtppc" target="_blank" rel="noopener">Watch on YouTube</a>
-</p>
+  <main class="section">
+    <div class="container narrow">
+      <h1>CubeMars Motor Control GUI</h1>
+      <p class="lead">Python GUI for CAN-based MIT-mode control · live tuning &amp; logging · safety watchdog</p>
 
-<h3>Motor control (Torque Mode)</h3>
-<div class="video">
-  <iframe
-    src="https://www.youtube.com/watch?v=EYWhkEC0-KE"
-    title="Motor control using torque mode"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</div>
-<p class="meta">
-  <a href="https://www.youtube.com/watch?v=EYWhkEC0-KE" target="_blank" rel="noopener">Watch on YouTube</a>
-</p>
+      <img class="hero-img" src="../assets/img/cubemars-placeholder.jpg" alt="CubeMars GUI">
 
-<h3>Motor control under load</h3>
-<div class="video">
-  <iframe
-    src="https://www.youtube.com/watch?v=vVdvbXkRBbE"
-    title="Motor control under load"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</div>
-<p class="meta">
-  <a href="https://www.youtube.com/watch?v=vVdvbXkRBbE" target="_blank" rel="noopener">Watch on YouTube</a>
-</p>
+      <h2>Objective</h2>
+      <p>Develop a Python interface to control CubeMars AK-series BLDCs over CAN using MIT mode.</p>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>Real-time multi-motor control with torque/position feedback</li>
+        <li>Heartbeat watchdog, soft torque limits, E-stop</li>
+        <li>Data logging and parameter presets for research testing</li>
+      </ul>
+
+      <h2>Highlights</h2>
+      <ul>
+        <li>Tkinter GUI + <code>python-can</code> (Seeed USB-CAN)</li>
+        <li>Daisy-linked CAN H/L; synchronized commands</li>
+        <li>Adaptive PID with live tuning sliders</li>
+      </ul>
+
+      <h2>Tools &amp; Skills</h2>
+      <p>Python · Tkinter · CAN Protocol · Embedded Control · Data Visualization</p>
+
+      <h2>Media</h2>
+
+      <h3>Multi-motor control (Position Mode)</h3>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/If_Ep2qtppc"
+          title="Multi-motor control using position mode"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="meta">
+        <a href="https://youtu.be/If_Ep2qtppc" target="_blank" rel="noopener">Watch on YouTube</a>
+      </p>
+
+      <h3>Motor control (Torque Mode)</h3>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/EYWhkEC0-KE"
+          title="Motor control using torque mode"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="meta">
+        <a href="https://youtu.be/EYWhkEC0-KE" target="_blank" rel="noopener">Watch on YouTube</a>
+      </p>
+
+      <h3>Motor control under load</h3>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/vVdvbXkRBbE"
+          title="Motor control under load"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="meta">
+        <a href="https://youtu.be/vVdvbXkRBbE" target="_blank" rel="noopener">Watch on YouTube</a>
+      </p>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> Weiran (Charles) Zhou</p></div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
