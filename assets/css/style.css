@@ -68,39 +68,76 @@ code {
 }
 .nav a:hover { color: #111827; }
 
-/* Hero (index) */
+/* =========================================================
+   HERO (index) — full-bleed banner + frosted text overlay
+   IMPORTANT: Works best if your index.html hero structure is:
+     <section class="hero">
+       <div class="hero-media"><img ...></div>
+       <div class="container">
+         <div class="hero-inner hero-overlay">
+           <div class="hero-copy">...text/buttons...</div>
+         </div>
+       </div>
+     </section>
+   If you can't/won't change HTML, this still improves the banner,
+   and .hero-inner hero-overlay rules won't apply.
+   ========================================================= */
+
 .hero {
-  padding: 0; /* banner-style */
-  background: linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
+  position: relative;
+  padding: 0; /* remove gap above image */
+  background: #000; /* behind image edges */
+  overflow: hidden;
 }
 
-/* keep hero text centered in normal container width */
-.hero .container { padding: 48px 0 24px; }
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1fr; /* stack text + banner */
-  gap: 18px;
-  align-items: center;
-}
-
-.hero .sub { color: #4b5563; max-width: 48ch; }
+/* remove the old top padding that made the “gap above the image” */
+.hero .container { padding: 0; }
 
 /* Full-bleed hero banner image (full viewport width) */
 .hero-media {
+  position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  order: -1; /* image on top; remove if you want it below text */
 }
 
 .hero-media img {
   width: 100%;
-  height: 100%; /* banner height */
+  height: clamp(320px, 46vw, 520px); /* banner height */
   object-fit: cover;
+  display: block;
   border-radius: 0;
   box-shadow: none;
 }
+
+/* Overlay layout container (sits on top of banner) */
+.hero-inner.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+/* Frosted panel for text */
+.hero-copy {
+  pointer-events: auto;
+  width: min(520px, 92vw);
+  margin-right: min(6vw, 48px);
+  padding: 22px 22px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+}
+
+/* Readability on top of photo */
+.hero-copy h1 { color: #ffffff; }
+.hero-copy p,
+.hero-copy .sub { color: rgba(255,255,255,0.88); }
 
 .cta {
   margin-top: 16px;
@@ -119,6 +156,16 @@ code {
   align-items: center;
   gap: 8px;
 }
+
+/* Buttons when used on hero overlay */
+.hero-copy .btn { background: #111827; }
+.hero-copy .btn.outline {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+
+/* Default outline button (non-hero contexts) */
 .btn.outline { background: transparent; color: #111827; border: 1px solid #111827; }
 .btn:hover { opacity: .9; }
 
@@ -140,7 +187,7 @@ code {
   transition: transform .12s ease, box-shadow .12s ease;
 }
 
-/* Square thumbnails */
+/* Square thumbnails (assumes original photos are square) */
 .card img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -246,6 +293,12 @@ code {
 
 /* Responsive */
 @media (max-width: 880px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-media { order: -1; }
+  .hero-inner.hero-overlay {
+    justify-content: center;
+    padding: 18px;
+  }
+  .hero-copy {
+    margin-right: 0;
+    width: min(640px, 96vw);
+  }
 }
