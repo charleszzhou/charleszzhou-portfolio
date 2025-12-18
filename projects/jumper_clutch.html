@@ -2,52 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Jumper Robot — Charles Zhou</title>
+  <title>Jumper Robot Clutch — Charles Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Same stylesheet as index (relative path from /projects/) -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">← Back to Portfolio</a>
+      <nav class="nav">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main class="section">
     <div class="container narrow">
-      <h1>Jumper Robot</h1>
-      <p class="lead">36″ vertical jump via optimized spring-motor actuation · <em>2nd Place (UCSB ME153)</em></p>
+      <h1>Jumper Robot Clutch</h1>
+      <p class="lead">Pawl clutch with Nitinol trigger · reliable release for untethered jumping</p>
 
-      <img class="hero-img" src="../assets/img/jumper-placeholder.jpg" alt="Jumper Robot">
+      <!-- HERO IMAGE -->
+      <img class="hero-img" src="../assets/img/pawlclutch.jpg" alt="Jumper robot pawl clutch mechanism">
 
       <h2>Objective</h2>
-      <p>Design the highest-jumping robot using limited materials and rapid iterations.</p>
+      <p>Design a compact, repeatable latch/clutch mechanism to store spring energy and release it quickly and reliably for a jumping robot.</p>
 
       <h2>Outcome</h2>
       <ul>
-        <li>36″ vertical jump (3× improvement over prototype)</li>
-        <li>Reliable force-controlled latch; low-friction string path</li>
-        <li>Momentum/energy modeling and high-speed testing</li>
+        <li>Consistent release behavior under high spring loads</li>
+        <li>Fast actuation using a Nitinol trigger wire</li>
+        <li>Improved repeatability across test runs through geometry and friction tuning</li>
       </ul>
 
       <h2>Highlights</h2>
       <ul>
-        <li>Mass distribution optimization for takeoff velocity</li>
-        <li>Iterative tuning of spring tension and latch geometry</li>
-        <li>MATLAB plots for performance analysis</li>
+        <li>Pawl geometry tuned for secure hold + clean disengagement</li>
+        <li>Low-friction contact surfaces and guided string path</li>
+        <li>Iterated through rapid prototypes and benchtop testing</li>
       </ul>
 
       <h2>Tools &amp; Skills</h2>
-      <p>SolidWorks · Dynamics · Prototyping · MATLAB · Motor Control</p>
+      <p>SolidWorks · Mechanism Design · Prototyping · Testing</p>
 
       <h2>Media</h2>
 
       <h3>Demo video</h3>
       <div class="video">
         <iframe
-          src="https://www.youtube.com/shorts/u5QXeyQKkCw"
-          title="Jumper Robot demo video"
-          frameborder="0"
+          src="https://www.youtube.com/embed/u5QXeyQKkCw"
+          title="Jumper robot clutch demo (YouTube Shorts)"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
@@ -59,8 +66,13 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>© <span id="year"></span> Weiran (Charles) Zhou</p></div>
+    <div class="container">
+      <p>© <span id="year"></span> Weiran (Charles) Zhou</p>
+    </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
