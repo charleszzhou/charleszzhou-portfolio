@@ -4,12 +4,19 @@
   <meta charset="utf-8">
   <title>CubeMars Motor Control GUI — Charles Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/charleszhou-portfolio/assets/css/style.css">
+
+  <!-- Use the SAME stylesheet as index (relative path from /projects/) -->
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">← Back to Portfolio</a>
+      <nav class="nav">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -18,7 +25,8 @@
       <h1>CubeMars Motor Control GUI</h1>
       <p class="lead">Python GUI for CAN-based MIT-mode control · live tuning &amp; logging · safety watchdog</p>
 
-      <img class="hero-img" src="../assets/img/cubemars-placeholder.jpg" alt="CubeMars GUI">
+      <!-- HERO IMAGE -->
+      <img class="hero-img" src="../assets/img/motorsetup2.jpg" alt="CubeMars motor control setup">
 
       <h2>Objective</h2>
       <p>Develop a Python interface to control CubeMars AK-series BLDCs over CAN using MIT mode.</p>
@@ -52,7 +60,7 @@
         </iframe>
       </div>
       <p class="meta">
-        <a href="https://youtu.be/If_Ep2qtppc" target="_blank" rel="noopener">Watch on YouTube</a>
+        <a href="https://www.youtube.com/watch?v=If_Ep2qtppc" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
 
       <h3>Motor control (Torque Mode)</h3>
@@ -65,7 +73,7 @@
         </iframe>
       </div>
       <p class="meta">
-        <a href="https://youtu.be/EYWhkEC0-KE" target="_blank" rel="noopener">Watch on YouTube</a>
+        <a href="https://www.youtube.com/watch?v=EYWhkEC0-KE" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
 
       <h3>Motor control under load</h3>
@@ -78,15 +86,19 @@
         </iframe>
       </div>
       <p class="meta">
-        <a href="https://youtu.be/vVdvbXkRBbE" target="_blank" rel="noopener">Watch on YouTube</a>
+        <a href="https://www.youtube.com/watch?v=vVdvbXkRBbE" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
-
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>© <span id="year"></span> Weiran (Charles) Zhou</p></div>
+    <div class="container">
+      <p>© <span id="year"></span> Weiran (Charles) Zhou</p>
+    </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
