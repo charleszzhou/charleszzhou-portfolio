@@ -16,42 +16,62 @@
   <main class="section">
     <div class="container narrow">
       <h1>Autonomous Submersible Robot</h1>
-      <p class="lead">PID-controlled syringe-pump buoyancy · Wi-Fi telemetry · 17 ft waterproof housing · <em>Most Technical Award</em></p>
+      <p class="lead">
+        PID-controlled syringe-pump buoyancy · Wi-Fi telemetry · 17 ft waterproof housing ·
+        <em>Most Technical Award</em>
+      </p>
 
       <img class="hero-img" src="../assets/img/submersible-placeholder.jpg" alt="Submersible robot">
 
       <h2>Objective</h2>
-      <p>Develop an autonomous submersible to measure underwater depth and capture imagery for cliff-diving safety.</p>
+      <p>
+        Develop an autonomous submersible to measure underwater depth and capture imagery
+        for cliff-diving safety.
+      </p>
 
       <h2>Outcome</h2>
       <ul>
         <li>Fully autonomous descent/ascent using pressure-feedback PID control</li>
-        <li>Transparent PETG vacuum-formed shell; epoxy-sealed bulkheads</li>
-        <li>Wi-Fi logging of depth, temperature, and images</li>
+        <li>Transparent PETG vacuum-formed shell with epoxy-sealed bulkheads</li>
+        <li>Wi-Fi logging of depth, temperature, and images upon resurfacing</li>
       </ul>
 
       <h2>Highlights</h2>
       <ul>
-        <li>Depth-triggered failsafe; robust sealing strategy</li>
-        <li>Modular electronics bay; syringe pump actuation</li>
-        <li>Tested to 17 ft; award-winning design</li>
+        <li>Depth-triggered failsafe and watchdog logic</li>
+        <li>Modular electronics bay with syringe-pump actuation</li>
+        <li>Validated to 17 ft depth; award-winning system integration</li>
       </ul>
 
       <h2>Tools &amp; Skills</h2>
       <p>SolidWorks · ESP32 · C++ · MATLAB · Fluid Mechanics · PID Control</p>
 
       <h2>Media</h2>
-      <ul>
-        <li>🎥 Demo video (add link): <a href="#" target="_blank" rel="noopener">https://youtu.be/TF_de-jIFxg</a></li>
-        <li>🖼️ Gallery: replace <code>assets/img/submersible-placeholder.jpg</code> with your photos</li>
-        <li>🧭 System diagram: insert a PNG/SVG here</li>
-      </ul>
+
+      <h3>Demo video</h3>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/watch?v=kg5mujQdcuM"
+          title="Autonomous Submersible Robot demo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="meta">
+        <a href="https://www.youtube.com/watch?v=kg5mujQdcuM" target="_blank" rel="noopener">Watch on YouTube</a>
+      </p>
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>© <span id="year"></span> Weiran (Charles) Zhou</p></div>
+    <div class="container">
+      <p>© <span id="year"></span> Weiran (Charles) Zhou</p>
+    </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
