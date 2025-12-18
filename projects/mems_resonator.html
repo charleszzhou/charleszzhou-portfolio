@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MEMS Resonator Design (Comb-Drive Mass Sensor) — Charles Zhou</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MEMS resonator design for bacterial mass detection — from analytical feasibility to COMSOL-backed k and meff extraction.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container narrow">
+      <h1>MEMS Resonator Design (Comb-Drive Mass Sensor)</h1>
+      <p class="lead">
+        Comb-drive resonator for bacterial mass detection · analytical feasibility + sensitivity modeling ·
+        COMSOL-backed <em>k</em> and <em>m<sub>eff</sub></em> extraction
+      </p>
+
+      <!-- Hero (swap later if you add a dedicated resonator image) -->
+      <img class="hero-img" src="../assets/img/portfoliohero.jpg" alt="MEMS resonator project hero">
+
+      <h2>Objective</h2>
+      <p>
+        Design a silicon MEMS resonator capable of detecting picogram-scale mass changes via frequency shift,
+        under strict electrical, mechanical, and fabrication constraints (e.g., ≤100&nbsp;V, ~1&nbsp;µm minimum features).
+      </p>
+
+      <h2>Context</h2>
+      <ul>
+        <li>Target organism: <em>P. gingivalis</em> (typical mass ~0.5–1.0&nbsp;pg)</li>
+        <li>System concept: disposable saliva cartridge + reusable reader (this project focuses on the MEMS resonator)</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>Established feasibility constraints (detectability upper-bounds <em>m<sub>eff</sub></em>; actuation/stability lower-bounds <em>k</em>)</li>
+        <li>Showed slide-level effective-mass approximation fails for this design regime (spring inertia not negligible)</li>
+        <li>Validated a COMSOL-backed design point with extracted parameters and a detectability margin ≥ 1</li>
+      </ul>
+
+      <h2>Highlights</h2>
+      <ul>
+        <li><strong>Why COMSOL is required:</strong> distributed stiffness, mode-shape-dependent inertia, and anchor compliance materially affect <em>k</em> and <em>m<sub>eff</sub></em></li>
+        <li><strong>Applicability check:</strong> the “<em>m<sub>eff</sub></em> = 0.24 m<sub>proofmass</sub></strong>” shortcut only holds when the proof mass ≫ 10× the spring mass (not feasible here)</li>
+        <li><strong>Extracted (COMSOL):</strong> <em>k</em><sub>eff</sub> ≈ 3.92&nbsp;N/m, <em>m</em><sub>eff</sub> ≈ 2.23&nbsp;ng, <em>f</em><sub>0</sub> ≈ 211&nbsp;kHz</li>
+      </ul>
+
+      <h2>Tools &amp; Skills</h2>
+      <p>COMSOL · MEMS Modeling · Dynamics &amp; Vibrations · Sensitivity Analysis · Design Tradeoffs</p>
+
+      <h2>Media</h2>
+      <p class="meta">
+        <a href="../assets/pdf/ResonatorDesign.pdf" target="_blank" rel="noopener">Open slides (PDF)</a>
+      </p>
+
+      <!-- Reuse the responsive iframe styling from .video for a clean embedded PDF viewer -->
+      <div class="video">
+        <iframe
+          src="../assets/pdf/ResonatorDesign.pdf#view=FitH"
+          title="MEMS Resonator Design Slides (PDF)"
+          allow="fullscreen"
+          loading="lazy">
+        </iframe>
+      </div>
+      <p class="meta">If the embedded viewer doesn’t load, use the “Open slides (PDF)” link above.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> Weiran (Charles) Zhou</p></div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
