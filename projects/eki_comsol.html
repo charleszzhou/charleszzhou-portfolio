@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Electrokinetic Injection COMSOL Simulation — Charles Zhou</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="COMSOL multiphysics model of electrokinetic injection (pinch & dispense) in a Micronit X8050 cross-channel.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container narrow">
+      <h1>Electrokinetic Injection (EKI) COMSOL Simulation</h1>
+      <p class="lead">
+        Multiphysics EC + Stokes + Nernst–Planck · pinch &amp; dispense in Micronit X8050 ·
+        plug metrics (center/FWHM/velocity) for experiment matching
+      </p>
+
+      <!-- Hero image -->
+      <img
+        class="hero-img"
+        src="../assets/img/Concentration%20of%20Fluorescein.jpg"
+        alt="COMSOL fluorescein concentration snapshot"
+      >
+
+      <h2>Objective</h2>
+      <p>
+        Build a simulation framework that reproduces the EKI pinch–dispense sequence in a cross-channel chip,
+        so that experimental plug motion and broadening can be used to infer unknown parameters (e.g., zeta
+        potential, effective diffusivity, unintended pressure offsets).
+      </p>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>Depth-averaged 2D Micronit X8050 cross-channel model with electroosmotic slip at walls</li>
+        <li>Pinching + dispensing voltage configurations with stationary fields followed by time-dependent transport</li>
+        <li>Quantitative plug metrics extracted downstream: center position, FWHM evolution, and plug velocity</li>
+      </ul>
+
+      <h2>Highlights</h2>
+      <ul>
+        <li>Coupled <strong>Electric Currents</strong>, <strong>Creeping Flow (Stokes)</strong>, and <strong>Transport of Diluted Species</strong></li>
+        <li>Mesh convergence focused on the junction + first downstream segment to stabilize plug tracking</li>
+        <li>Clear separation of mechanisms: EOF + electrophoresis + convection set velocity; diffusion + field stretching set broadening</li>
+      </ul>
+
+      <h2>Tools &amp; Skills</h2>
+      <p>COMSOL Multiphysics · Microfluidics · EOF/Electrophoresis · Nernst–Planck Transport · Mesh Convergence · Data Extraction</p>
+
+      <h2>Media</h2>
+
+      <h3>Project report (PDF)</h3>
+      <p class="meta">
+        <a class="btn" href="../assets/pdf/EKIreport.pdf" target="_blank" rel="noopener">Open EKI Report (PDF)</a>
+        <a class="btn outline" href="../assets/pdf/EKIreport.pdf" download>Download</a>
+      </p>
+
+      <!-- Optional inline embed -->
+      <div class="video" style="padding-top: 140%; margin-top: 14px;">
+        <iframe
+          src="../assets/pdf/EKIreport.pdf#view=FitH"
+          title="EKI COMSOL report PDF"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="meta">
+        If the PDF preview doesn’t render on some browsers, use the “Open EKI Report (PDF)” button above.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> Weiran (Charles) Zhou</p></div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
