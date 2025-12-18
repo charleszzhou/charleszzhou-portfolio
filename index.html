@@ -23,23 +23,28 @@
     </div>
   </header>
 
+  <!-- HERO: updated to match full-bleed banner + frosted overlay CSS -->
   <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <h1>Mechanical Engineer</h1>
-        <p>Dynamical Systems &amp; Controls · MEMS</p>
-        <p class="sub">
-          I design and build intelligent electromechanical and microfluidic systems —
-          robots and devices that sense, adapt, and perform reliably in the real world.
-        </p>
-        <div class="cta">
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn outline" href="#contact">Get in touch</a>
+    <!-- Full-bleed image layer (must be outside the container for true banner) -->
+    <div class="hero-media">
+      <img src="assets/img/portfoliohero.jpg" alt="Portfolio hero image">
+    </div>
+
+    <!-- Overlay layer -->
+    <div class="container">
+      <div class="hero-inner hero-overlay">
+        <div class="hero-copy">
+          <h1>Mechanical Engineer</h1>
+          <p>Dynamical Systems &amp; Controls · MEMS</p>
+          <p class="sub">
+            I design and build intelligent electromechanical and microfluidic systems —
+            robots and devices that sense, adapt, and perform reliably in the real world.
+          </p>
+          <div class="cta">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn outline" href="#contact">Get in touch</a>
+          </div>
         </div>
-      </div>
-      <div class="hero-media">
-        <!-- UPDATED hero image -->
-        <img src="assets/img/portfoliohero.jpg" alt="Portfolio hero image">
       </div>
     </div>
   </section>
@@ -51,7 +56,6 @@
         <div class="grid">
           <!-- Autonomous Submersible Robot -->
           <a class="card" href="projects/submersible.html">
-            <!-- UPDATED featured image -->
             <img src="assets/img/subhero.jpg" alt="Autonomous Submersible Robot">
             <div class="card-body">
               <h3>Autonomous Submersible Robot</h3>
@@ -66,7 +70,6 @@
 
           <!-- Multi-motor Control Interface -->
           <a class="card" href="projects/cubemars_gui.html">
-            <!-- UPDATED featured image -->
             <img src="assets/img/motorsetup2.jpg" alt="Multi-motor Control Interface setup">
             <div class="card-body">
               <h3>Multi-motor Control Interface</h3>
@@ -79,7 +82,6 @@
 
           <!-- Electrokinetic Injection COMSOL Simulation -->
           <a class="card" href="projects/eki_comsol.html">
-            <!-- UPDATED featured image -->
             <img src="assets/img/Concentration%20of%20Fluorescein.jpg" alt="Fluorescein concentration visualization">
             <div class="card-body">
               <h3>Electrokinetic Injection COMSOL Simulation</h3>
