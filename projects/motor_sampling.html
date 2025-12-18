@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sampling Frequency & DC Motor Control — Charles Zhou</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container narrow">
+
+      <h1>How Sampling Frequency Shapes DC Motor Control Performance</h1>
+      <p class="lead">
+        Experimental study of discrete-time control effects on RMS tracking error and transient response
+      </p>
+
+      <h2>Objective</h2>
+      <p>
+        Quantify how controller sampling frequency influences closed-loop DC motor speed regulation,
+        focusing on tracking accuracy and transient behavior in a discrete-time PI controller.
+      </p>
+
+      <h2>Experimental Setup</h2>
+      <ul>
+        <li>Discrete-time PI controller implemented on a microcontroller</li>
+        <li>DC motor with quadrature encoder velocity feedback</li>
+        <li>Sampling frequencies ranging from 10 Hz to 100 Hz</li>
+        <li>Step input from 0 → 4 rad/s with high-rate data logging</li>
+      </ul>
+
+      <h2>Key Results</h2>
+      <ul>
+        <li>RMS tracking error decreases monotonically with sampling frequency</li>
+        <li>Low sampling rates (10–20 Hz) exhibit oscillations and sluggish response</li>
+        <li>Performance gains diminish beyond ~50 Hz, indicating bandwidth limits</li>
+        <li>Higher sampling frequencies reduce overshoot and settling time variability</li>
+      </ul>
+
+      <h2>Tools &amp; Skills</h2>
+      <p>
+        Embedded Control · Discrete-Time Systems · DC Motors · PI Control ·
+        Data Logging · MATLAB · Experimental Analysis
+      </p>
+
+      <h2>Media</h2>
+
+      <p class="meta">
+        📄 <strong>Project slides (PDF):</strong>
+        <a href="../assets/pdf/SamplingFreqExperiment.pdf" target="_blank" rel="noopener">
+          How Sampling Frequency Shapes DC Motor Control Performance
+        </a>
+      </p>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Weiran (Charles) Zhou</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
