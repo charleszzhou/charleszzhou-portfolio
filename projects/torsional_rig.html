@@ -4,12 +4,19 @@
   <meta charset="utf-8">
   <title>Torsional Stiffness Apparatus — Charles Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Same stylesheet as index (relative path from /projects/) -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">← Back to Portfolio</a>
+      <nav class="nav">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -18,7 +25,8 @@
       <h1>Torsional Stiffness Measurement Apparatus</h1>
       <p class="lead">0.1 Nm/deg resolution · &lt; ±5% variance · replaces a $12K torque sensor</p>
 
-      <img class="hero-img" src="../assets/img/torsional-placeholder.jpg" alt="Torsional Rig">
+      <!-- HERO IMAGE -->
+      <img class="hero-img" src="../assets/img/torsionmeter.jpg" alt="Torsional stiffness measurement apparatus">
 
       <h2>Objective</h2>
       <p>Build a low-cost rig to quantify torsional stiffness of inflatable soft robotic beams.</p>
@@ -45,9 +53,8 @@
       <h3>Demo video</h3>
       <div class="video">
         <iframe
-          src="https://www.youtube.com/watch?v=8LT2I5Sy5Ig"
+          src="https://www.youtube.com/embed/8LT2I5Sy5Ig"
           title="Torsional stiffness apparatus demo"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
@@ -56,16 +63,23 @@
         <a href="https://www.youtube.com/watch?v=8LT2I5Sy5Ig" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
 
-      <ul>
-        <li>📈 Torque vs. deflection plot: insert image</li>
-        <li>🧩 Labeled assembly diagram: insert image</li>
+      <!-- Optional future assets -->
+      <h3>Figures (optional)</h3>
+      <ul class="meta">
+        <li>📈 Torque vs. deflection plot: add an image and link it here</li>
+        <li>🧩 Labeled assembly diagram: add an image and link it here</li>
       </ul>
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>© <span id="year"></span> Weiran (Charles) Zhou</p></div>
+    <div class="container">
+      <p>© <span id="year"></span> Weiran (Charles) Zhou</p>
+    </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
