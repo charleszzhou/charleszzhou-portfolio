@@ -18,8 +18,13 @@
     <div class="container narrow">
       <h1>Electrokinetic Injection (EKI) COMSOL Simulation</h1>
       <p class="lead">
-        Multiphysics EC + Stokes + Nernst–Planck · pinch &amp; dispense in Micronit X8050 ·
-        plug metrics (center/FWHM/velocity) for experiment matching
+        Multiphysics Modeling of Pinch–Dispense Plug Transport in Microfluidic Channels
+      </p>
+
+      <h2>Executive Summary</h2>
+      <p>
+        Built a 2D COMSOL Multiphysics simulation capturing the electrokinetic injection (EKI) pinch–dispense sequence in a cross-channel microfluidic chip, 
+        enabling extraction of key experimental metrics such as plug center position, full width at half maximum (FWHM), and velocity.
       </p>
 
       <!-- Hero image -->
@@ -29,29 +34,47 @@
         alt="COMSOL fluorescein concentration snapshot"
       >
 
-      <h2>Objective</h2>
+      <h2>Problem & Purpose</h2>
       <p>
-        Build a simulation framework that reproduces the EKI pinch–dispense sequence in a cross-channel chip,
-        so that experimental plug motion and broadening can be used to infer unknown parameters (e.g., zeta
-        potential, effective diffusivity, unintended pressure offsets).
+        Electrokinetic injection in microfluidics couples electric fields, electroosmotic flow (EOF), and species transport. 
+        Accurately reproducing this process in simulation helps infer unknown parameters 
+        (e.g., zeta potential, effective diffusivity, pressure offsets) by matching model outputs to experimental plug evolution.
       </p>
 
-      <h2>Outcome</h2>
+      <h2>Modeling Approach</h2>
       <ul>
-        <li>Depth-averaged 2D Micronit X8050 cross-channel model with electroosmotic slip at walls</li>
-        <li>Pinching + dispensing voltage configurations with stationary fields followed by time-dependent transport</li>
-        <li>Quantitative plug metrics extracted downstream: center position, FWHM evolution, and plug velocity</li>
+        <li>
+    <strong>Physics Coupling:</strong>
+    Electric currents, creeping flow (Stokes), and Nernst–Planck transport solved together to represent electrophoresis, EOF, convection, and diffusion.
+  </li>
+  <li>
+    <strong>Geometry:</strong>
+    Depth-averaged 2D representation of the Micronit X8050 cross-channel chip.
+  </li>
+  <li>
+    <strong>Boundary Conditions:</strong>
+    Electroosmotic slip applied at channel walls to model EOF.
+  </li>
+  <li>
+    <strong>Mesh Strategy:</strong>
+    Convergence-focused refinement near the junction and initial downstream segment to stabilize plug tracking.
+  </li>
       </ul>
 
-      <h2>Highlights</h2>
+      <h2>Key Outputs</h2>
       <ul>
-        <li>Coupled <strong>Electric Currents</strong>, <strong>Creeping Flow (Stokes)</strong>, and <strong>Transport of Diluted Species</strong></li>
-        <li>Mesh convergence focused on the junction + first downstream segment to stabilize plug tracking</li>
-        <li>Clear separation of mechanisms: EOF + electrophoresis + convection set velocity; diffusion + field stretching set broadening</li>
-      </ul>
+  <li>
+    <strong>Quantitative Plug Metrics:</strong>
+    Extracted downstream plug center, FWHM evolution, and velocity time series.
+  </li>
+  <li>
+    <strong>Mechanism Separation:</strong>
+    Demonstrated how EOF-driven convection and field-induced electrophoresis set plug velocity, while diffusion and field stretching determine broadening.
+  </li>
+</ul>
 
       <h2>Tools &amp; Skills</h2>
-      <p>COMSOL Multiphysics · Microfluidics · EOF/Electrophoresis · Nernst–Planck Transport · Mesh Convergence · Data Extraction</p>
+      <p>COMSOL Multiphysics · Microfluidics · Electroosmotic Flow · Electrophoresis · Nernst–Planck Transport · Mesh Convergence · Data Extraction</p>
 
       <h2>Media</h2>
 
