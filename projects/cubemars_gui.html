@@ -23,30 +23,63 @@
   <main class="section">
     <div class="container narrow">
       <h1>CubeMars Motor Control GUI</h1>
-      <p class="lead">Python GUI for CAN-based MIT-mode control · live tuning &amp; logging · safety watchdog</p>
+      <p class="lead">CAN-Based Control Interface for High-Torque BLDC Actuators</p>
+
+      <h2>Executive Summary</h2>
+      <p>
+        Developed a Python-based graphical user interface (GUI) for controlling and monitoring CubeMars AK-series BLDC motors over CAN. 
+        The interface supports real-time commanding, telemetry visualization, live parameter tuning, and safety mechanisms for high-torque 
+        robotic actuators used in research and prototyping.
+      </p>
 
       <!-- HERO IMAGE -->
       <img class="hero-img" src="../assets/img/motorsetup2.jpg" alt="CubeMars motor control setup">
 
-      <h2>Objective</h2>
-      <p>Develop a Python interface to control CubeMars AK-series BLDCs over CAN using MIT mode.</p>
+      <h2>Problem & Constraints</h2>
+      <p>
+        Effective testing of high-performance robotic actuators requires a reliable interface for issuing commands, observing state feedback, and adjusting control parameters during operation. 
+        The system needed to handle continuous CAN communication, enforce safe operating limits, and remain flexible enough to support rapid iteration without relying on vendor software.
+      </p>
 
-      <h2>Outcome</h2>
+      <h2>System Overview<h2>
+        <p>
+          The Motor Control GUI is a desktop application written in Python that communicates with CubeMars AK-series motors over a shared CAN bus via a USB-CAN adapter. 
+          The software manages motor command generation, feedback decoding, and UI interaction in a single integrated tool suitable for bench testing and actuator characterization.
+        </p>
+
+      <h2>Control &amp; Telemetry Capabilities</h2>
       <ul>
-        <li>Real-time multi-motor control with torque/position feedback</li>
-        <li>Heartbeat watchdog, soft torque limits, E-stop</li>
-        <li>Data logging and parameter presets for research testing</li>
+        <li><strong>MIT Mode Control:</strong> Torque, position, and velocity commands supported through CAN messaging.</li>
+        <li><strong>Multi-Motor Operation:</strong> Independent addressing and synchronized control of multiple motors on a shared bus.</li>
+        <li><strong>Live Parameter Tuning:</strong> Control gains and setpoints adjustable during operation.</li>
+        <li><strong>Real-Time Feedback:</strong> Continuous display of motor position, velocity, torque, and temperature.</li>
       </ul>
 
-      <h2>Highlights</h2>
-      <ul>
-        <li>Tkinter GUI + <code>python-can</code> (Seeed USB-CAN)</li>
-        <li>Daisy-linked CAN H/L; synchronized commands</li>
-        <li>Adaptive PID with live tuning sliders</li>
-      </ul>
+      <h2>Implementation Notes</h2>
+        <p>
+          Motor communication is implemented according to the CubeMars CAN protocol specification, with careful handling of message formatting, scaling, and state transitions. 
+          The GUI layer is built using Python’s Tkinter framework, enabling a lightweight and responsive interface while maintaining clear separation from low-level communication logic.
+        </p>
 
-      <h2>Tools &amp; Skills</h2>
-      <p>Python · Tkinter · CAN Protocol · Embedded Control · Data Visualization</p>
+      <h2>Safety & Reliability Features</h2>
+        <ul>
+          <li>Heartbeat-based motor enable logic</li>
+          <li>Configurable soft torque and position limits</li>
+          <li>Global emergency stop for immediate motor disable</li>
+          <li>Visual indicators for motor state and communication status</li>
+        </ul>
+
+        <h2> Data Handling & Experiment Workflow</h2>
+        <p>
+          Telemetry can be streamed live to the interface and optionally logged for post-test analysis. 
+          Parameter presets allow experiments to be repeated under consistent conditions, supporting iterative controller development and hardware testing.
+        </p>
+        
+      <h2>Outcome & Validation</h2>
+      <p>
+        The interface enabled stable real-time control and monitoring of CubeMars AK-series motors during repeated bench and load tests. 
+        Live tuning and integrated safety logic improved testing efficiency and reduced the risk of hardware damage during actuator experimentation.
+      </p>
 
       <h2>Media</h2>
 
@@ -88,6 +121,9 @@
       <p class="meta">
         <a href="https://www.youtube.com/watch?v=vVdvbXkRBbE" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
+
+              <h2>Tools &amp; Skills</h2>
+      <p>Python · CAN Communication · Motor Control (MIT Mode) · GUI Design (Tkinter) · Real-Time Telemetry · Safety-Critical Software</p>
     </div>
   </main>
 
