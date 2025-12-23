@@ -24,35 +24,79 @@
     <div class="container narrow">
       <h1>Autonomous Submersible Robot</h1>
       <p class="lead">
-        PID-controlled syringe-pump buoyancy · Wi-Fi telemetry · 17 ft waterproof housing ·
-        <em>Most Technical Award</em>
+        Pressure-Feedback Buoyancy Control for Underwater Depth Measurement
+      </p>
+
+      <h2>Executive Summary</h2>
+      <p>
+        Designed and built an autonomous submersible robot for underwater depth measurement in cliff-diving environments. 
+        The system uses pressure-feedback-based buoyancy control to autonomously descend, detect the bottom, and resurface while maintaining stability in a highly nonlinear fluid environment. 
+        Sensor data and images are logged onboard and transmitted wirelessly after resurfacing. The vehicle was validated to a depth of 17 ft and awarded Most Technical Project.
       </p>
 
       <!-- HERO IMAGE -->
       <img class="hero-img" src="../assets/img/subhero.jpg" alt="Autonomous submersible robot hero image">
 
-      <h2>Objective</h2>
+      <h2>Problem & Constraints</h2>
       <p>
-        Develop an autonomous submersible to measure underwater depth and capture imagery
-        for cliff-diving safety.
+        Cliff-diving safety requires reliable depth information in locations where visibility is poor and manual measurement is unsafe. 
+        The system needed to operate untethered, survive repeated submersion, maintain stable buoyancy control under nonlinear hydrodynamic effects, 
+        and reliably recover data without requiring continuous underwater communication.
       </p>
 
-      <h2>Outcome</h2>
+      <h2>System Architecture</h2>
+      <p>
+        The robot consists of a sealed pressure-rated housing containing an embedded control system, pressure and temperature sensors, onboard data storage, 
+        and a syringe-pump-driven buoyancy bladder. 
+        An ESP32 microcontroller coordinates sensing, closed-loop control, mission logic, data logging, and post-mission wireless communication upon resurfacing.
+      </p>
+
+      <h2>Autonomous Operation Sequence</h2>
+      <p>
+        1. Robot is deployed at the water surface and autonomous descent is triggered via wifi (phone).
+        2. Pressure feedback is used to regulate buoyancy via closed-loop control.
+        3. Bottom contact is detected using stabilized pressure readings.
+        4. Buoyancy is reversed to initiate ascent.
+        5. Upon resurfacing, collected depth, temperature, and image data is transmitted wirelessly.
+      </p>
+
+      <h2>Control & Sensing</h2>
+      <p>
+        Vertical motion is regulated using a closed-loop PID controller driven by pressure sensor feedback. 
+        Pressure readings are converted to depth via the static water column relationship, enabling robust depth estimation independent of visual conditions. 
+        Control gains were tuned to balance response speed with stability in the presence of fluid nonlinearities and sensor noise.
+      </p>
+
+      <h2>Mechanical & Electrical Implementation</h2>
+      <p>
+        Buoyancy control is achieved using a syringe-pump-driven bladder system, allowing precise volumetric adjustment without external thrusters. 
+        The housing was fabricated from vacuum-formed PETG with epoxy-sealed bulkheads to ensure waterproofing under repeated submersion. 
+        Electronics were modularized to simplify integration, sealing, and debugging.
+      </p>
+
+      <h2>Data Handling & Telemetry</h2>
+      <p>
+        All sensor measurements and images are logged locally during the mission. 
+        Wireless communication is enabled only after resurfacing, ensuring reliable data recovery without requiring live underwater telemetry or continuous connectivity.
+      </p>
+
+      <h2>Outcome & Validation</h2>
       <ul>
-        <li>Fully autonomous descent/ascent using pressure-feedback PID control</li>
-        <li>Transparent PETG vacuum-formed shell with epoxy-sealed bulkheads</li>
-        <li>Wi-Fi logging of depth, temperature, and images upon resurfacing</li>
+        The completed system demonstrated reliable autonomous depth measurement through closed-loop buoyancy control. 
+        The robot consistently descended, detected the bottom, resurfaced autonomously, and recovered onboard data across repeated trials. 
+        The vehicle was validated to a maximum depth of 17 ft with no water ingress and consistent sensor performance,
+        earning the Most Technical Project award for system complexity and execution.
       </ul>
 
-      <h2>Highlights</h2>
+      <h2>Key Engineering Takeaways</h2>
       <ul>
-        <li>Depth-triggered failsafe and watchdog logic</li>
-        <li>Modular electronics bay with syringe-pump actuation</li>
-        <li>Validated to 17 ft depth; award-winning system integration</li>
+        <li>Designing stable feedback control in real-world fluid environments requires careful handling of nonlinear dynamics and sensor uncertainty.</li>
+        <li>System-level integration — not individual subsystems — ultimately determines reliability in autonomous hardware.</li>
+        <li>Robust mission logic and failure handling are as critical as mechanical and control design in untethered systems.</li>
       </ul>
 
       <h2>Tools &amp; Skills</h2>
-      <p>SolidWorks · ESP32 · C++ · MATLAB · Fluid Mechanics · PID Control</p>
+      <p>ESP32 · Embedded C++ · Closed-Loop Control (PID) · Pressure Sensing & Calibration · Waterproof Mechanical Design · Systems Integration · Rapid Prototyping (PETG, Vacuum Forming)</p>
 
       <h2>Media</h2>
 
