@@ -2,17 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Pawl Clutch for an Untethered Jumping Robot — Charles Zhou</title>
+  <title>Pawl Clutch for an Untethered Jumping Robot — Weiran (Charles) Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Compact pawl clutch with a Nitinol trigger to reliably store and release spring energy for an untethered jumping robot.">
+
+  <meta property="og:title" content="Pawl Clutch for an Untethered Jumping Robot — Weiran (Charles) Zhou">
+  <meta property="og:description" content="Reliable energy release using a compact pawl clutch with shape-memory alloy (Nitinol) actuation.">
+  <meta property="og:type" content="website">
 
   <!-- Same stylesheet as index (relative path from /projects/) -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">← Back to Portfolio</a>
-      <nav class="nav">
+      <nav class="site-nav" aria-label="Primary">
         <a href="../index.html#projects">Projects</a>
         <a href="../index.html#about">About</a>
         <a href="../index.html#contact">Contact</a>
@@ -20,50 +27,48 @@
     </div>
   </header>
 
-    <main class="section">
+  <main class="section">
     <div class="container narrow">
       <h1>Pawl Clutch for an Untethered Jumping Robot</h1>
       <p class="lead">Reliable Energy Release via Shape-Memory Alloy Actuation</p>
 
-  <h2>Executive Summary</h2>
-<p>
-  Designed and prototyped a compact pawl-based clutch mechanism with a Nitinol trigger to reliably store
-  and rapidly release spring energy for an untethered jumping robot.
-</p>
-
-  <main class="section">
-    <div class="container narrow">
-      <h1>Jumper Robot Clutch</h1>
-      <p class="lead">Compact Pawl Clutch with Nitinol Trigger for Reliable Energy Release</p>
+      <h2>Executive Summary</h2>
+      <p>
+        Designed and prototyped a compact pawl-based clutch with a Nitinol trigger to securely hold spring preload and
+        release it cleanly on demand for an untethered jumping robot. The mechanism was iterated through rapid prototypes
+        to improve engagement stability, release consistency, and repeatability.
+      </p>
 
       <!-- HERO IMAGE -->
-      <img class="hero-img" src="../assets/img/pawlclutch.jpg" alt="Jumper robot pawl clutch mechanism">
+      <img
+        class="hero-img"
+        src="../assets/img/pawlclutch.jpg"
+        alt="Pawl clutch mechanism for the jumping robot"
+        loading="lazy"
+        decoding="async"
+      >
 
+      <h2>Problem &amp; Purpose</h2>
+      <p>
+        Jumping robots require a mechanism that can withstand high spring preload without slipping, then disengage
+        reliably with minimal energy loss. The design challenge was balancing strong, robust engagement with a release
+        action that is fast, repeatable, and tolerant to small misalignments and wear.
+      </p>
 
-<h2>Problem &amp; Purpose</h2>
-<p>
-  Jumping robots require a mechanism that can hold significant spring preload and then release it cleanly
-  and consistently on demand. The design challenge was to balance secure engagement under load with
-  repeatable disengagement and minimal energy loss.
-</p>
+      <h2>Design Highlights</h2>
+      <ul>
+        <li><strong>Pawl engagement geometry:</strong> Tuned tooth/contact geometry for secure engagement and clean disengagement under load.</li>
+        <li><strong>Nitinol trigger:</strong> Compact shape-memory actuator that retracts the latch to initiate release.</li>
+        <li><strong>Friction &amp; contact control:</strong> Guided motion paths and surface choices to reduce stiction and improve repeatability.</li>
+        <li><strong>Rapid iteration:</strong> Multiple prototypes validated via benchtop cycling tests to converge on consistent performance.</li>
+      </ul>
 
-
-<h2>Design Highlights</h2>
-<ul>
-  <li><strong>Pawl Clutch Geometry:</strong> Tuned for secure engagement and clean disengagement under repeated cycling.</li>
-  <li><strong>Nitinol Trigger Actuation:</strong> Fast, compact actuation using shape-memory alloy wire to release the pawl.</li>
-  <li><strong>Friction &amp; Contact Optimization:</strong> Low-friction surface finishes and guided paths to improve consistency and reduce wear.</li>
-  <li><strong>Rapid Prototyping:</strong> Iterated through multiple prototypes with benchtop testing to refine performance.</li>
-</ul>
-
-
-<h2>Outcome &amp; Validation</h2>
-<ul>
-  <li><strong>Consistent release behavior</strong> under high spring loads across multiple trials.</li>
-  <li><strong>Fast actuation</strong> enabled by the Nitinol trigger.</li>
-  <li><strong>Improved repeatability</strong> through geometry and friction tuning, supporting reliable jumping sequences.</li>
-</ul>
-
+      <h2>Outcome &amp; Validation</h2>
+      <ul>
+        <li><strong>Consistent release</strong> under high spring preload across repeated trials.</li>
+        <li><strong>Fast, compact actuation</strong> enabled by the Nitinol trigger.</li>
+        <li><strong>Improved repeatability</strong> through geometry and friction tuning for reliable jumping sequences.</li>
+      </ul>
 
       <h2>Tools &amp; Skills</h2>
       <p>SolidWorks · Mechanism Design · Rapid Prototyping · Benchtop Testing</p>
@@ -75,6 +80,7 @@
         <iframe
           src="https://www.youtube.com/embed/u5QXeyQKkCw"
           title="Jumper robot clutch demo (YouTube Shorts)"
+          referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
