@@ -2,15 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Sampling Frequency Effects in DC Motor Control — Charles Zhou</title>
+  <title>Sampling Frequency Effects in DC Motor Control — Weiran (Charles) Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Experimental study of how discrete-time sampling frequency affects DC motor speed control using a PI controller, focusing on tracking error and transient response.">
+
+  <meta property="og:title" content="Sampling Frequency Effects in DC Motor Control — Weiran (Charles) Zhou">
+  <meta property="og:description" content="Experimental analysis of discrete-time PI control across sampling rates, quantifying tracking error, overshoot, and settling behavior.">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
 
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">← Back to Portfolio</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -19,66 +32,53 @@
 
       <h1>Sampling Frequency Effects in DC Motor Control</h1>
       <p class="lead">
-Experimental Study of Discrete-Time PI Control on DC Motor Response      </p>
+        Experimental Analysis of Discrete-Time PI Control
+      </p>
 
       <h2>Executive Summary</h2>
       <p>
-        Experimentally investigated how discrete-time controller sampling frequency influences closed-loop DC motor speed regulation, 
-        focusing on tracking accuracy and transient behavior with a PI controller across a range of sample rates.
+        Experimentally investigated how controller sampling frequency influences closed-loop DC motor speed regulation.
+        Using a discrete-time PI controller, motor response was evaluated across a wide range of sample rates to quantify
+        effects on tracking accuracy, transient response, and stability.
       </p>
 
       <img
         class="hero-img"
         src="../assets/img/motorResponseTile.png"
-        alt="Motor Response Tile"
+        alt="DC motor speed response across sampling frequencies"
+        loading="lazy"
+        decoding="async"
       >
 
-<h2>Problem &amp; Purpose</h2>
-<p>
-  In digital control systems, sampling frequency fundamentally affects controller performance.
-  This study quantifies how sampling rates from low (~10&nbsp;Hz) to high (~100&nbsp;Hz)
-  impact RMS tracking error, transient response, overshoot, and settling time
-  in a DC motor speed regulation task.
-</p>
+      <h2>Problem &amp; Purpose</h2>
+      <p>
+        In digital control systems, the choice of sampling frequency directly affects stability margins and achievable performance.
+        This project quantifies how discrete sampling rates—from low (~10&nbsp;Hz) to high (~100&nbsp;Hz)—impact RMS tracking error,
+        overshoot, and settling behavior in a DC motor speed control task.
+      </p>
 
+      <h2>Experimental Setup</h2>
+      <ul>
+        <li><strong>Controller:</strong> Discrete-time PI controller implemented on a microcontroller.</li>
+        <li><strong>Plant:</strong> DC motor with quadrature encoder providing velocity feedback.</li>
+        <li><strong>Sampling rates:</strong> Discrete loop frequencies from 10&nbsp;Hz to 100&nbsp;Hz.</li>
+        <li><strong>Test input:</strong> Step command from 0 → 4&nbsp;rad/s with high-rate data logging.</li>
+      </ul>
 
-<h2>Experimental Setup</h2>
-<ul>
-  <li>
-    <strong>Controller:</strong>
-    Discrete-time PI controller implemented on a microcontroller.
-  </li>
-  <li>
-    <strong>Plant:</strong>
-    DC motor with quadrature encoder providing velocity feedback.
-  </li>
-  <li>
-    <strong>Sampling Frequencies:</strong>
-    Range of discrete rates from 10&nbsp;Hz to 100&nbsp;Hz.
-  </li>
-  <li>
-    <strong>Input:</strong>
-    Step change from 0 &rarr; 4&nbsp;rad/s with high-rate data logging.
-  </li>
-</ul>
+      <h2>Key Results</h2>
+      <ul>
+        <li><strong>Tracking accuracy:</strong> RMS tracking error decreases monotonically with increasing sampling frequency.</li>
+        <li><strong>Low-rate behavior:</strong> Sampling below ~20&nbsp;Hz introduces oscillations and sluggish response.</li>
+        <li><strong>Diminishing returns:</strong> Performance gains taper beyond ~50&nbsp;Hz, indicating a practical bandwidth limit.</li>
+        <li><strong>Transient response:</strong> Higher sampling rates reduce overshoot and variability in settling time.</li>
+      </ul>
 
-
-<h2>Key Results</h2>
-<ul>
-  <li>
-    RMS tracking error decreases monotonically as sampling frequency increases.
-  </li>
-  <li>
-    Low sampling rates (~10–20&nbsp;Hz) exhibit oscillations and sluggish response.
-  </li>
-  <li>
-    Performance gains diminish beyond ~50&nbsp;Hz, indicating practical bandwidth limits.
-  </li>
-  <li>
-    Higher sampling frequencies reduce both overshoot and variability in settling time.
-  </li>
-</ul>
-
+      <h2>Engineering Insight</h2>
+      <p>
+        The results highlight a key tradeoff in embedded control: while increasing sampling frequency improves performance,
+        gains are ultimately limited by plant dynamics, sensor resolution, and computation constraints.
+        Selecting an appropriate loop rate is therefore a system-level design decision, not simply a matter of maximizing frequency.
+      </p>
 
       <h2>Tools &amp; Skills</h2>
       <p>
@@ -87,28 +87,29 @@ Experimental Study of Discrete-Time PI Control on DC Motor Response      </p>
 
       <h2>Media</h2>
 
-      <div class="pdf-block">
-        <h3>Project slides (PDF)</h3>
+      <h3>Project slides (PDF)</h3>
+      <p class="meta">
+        <a class="btn" href="../assets/pdf/SamplingFreqExperiment.pdf" target="_blank" rel="noopener">
+          Open Slides (PDF)
+        </a>
+        <a class="btn outline" href="../assets/pdf/SamplingFreqExperiment.pdf" download>
+          Download
+        </a>
+      </p>
 
-        <div class="pdf-actions">
-          <a class="btn" href="../assets/pdf/SamplingFreqExperiment.pdf" target="_blank" rel="noopener">
-            Open Slides (PDF)
-          </a>
-          <a class="btn outline" href="../assets/pdf/SamplingFreqExperiment.pdf" download>
-            Download
-          </a>
-        </div>
-
-      <div class="video">
+      <div class="video" style="padding-top: 140%; margin-top: 14px;">
         <iframe
           src="../assets/pdf/SamplingFreqExperiment.pdf#view=FitH"
           title="Sampling Frequency Experiment Slides (PDF)"
-          allow="fullscreen"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
           loading="lazy">
         </iframe>
-
-        <p class="meta">If the embedded viewer doesn’t load, use “Open Slides (PDF)”.</p>
       </div>
+
+      <p class="meta">
+        If the embedded viewer doesn’t load, use “Open Slides (PDF)”.
+      </p>
 
     </div>
   </main>
