@@ -2,20 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Weiran (Charles) Zhou — Mechanical Engineer</title>
+  <title>Weiran (Charles) Zhou — Controls, MEMS, Microfluidics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Mechanical Engineering portfolio — Dynamical Systems & Controls + MEMS.">
   <meta property="og:title" content="Weiran (Charles) Zhou — Mechanical Engineer">
-  <meta property="og:description" content="Autonomous submersible, multi-motor control GUI, electrokinetic injection COMSOL simulation.">
+  <meta property="og:description" content="Controls, MEMS, and microfluidics projects: autonomous submersible, multi-motor CAN control, electrokinetic injection modeling.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#projects">Skip to content</a>
+
   <header class="site-header">
     <div class="container">
       <a class="brand" href="./">Weiran (Charles) Zhou</a>
-      <nav class="nav">
+      <nav class="site-nav" aria-label="Primary">
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -23,19 +26,18 @@
     </div>
   </header>
 
-  <!-- HERO: updated to match full-bleed banner + frosted overlay CSS -->
-  <section class="hero">
-    <!-- Full-bleed image layer (must be outside the container for true banner) -->
+  <!-- HERO: full-bleed banner + frosted overlay CSS -->
+  <section class="hero" aria-label="Introduction">
     <div class="hero-media">
-      <img src="assets/img/portfoliohero.jpg" alt="Portfolio hero image">
+      <img src="assets/img/portfoliohero.jpg" alt="Portfolio hero image" decoding="async">
     </div>
 
-    <!-- Overlay layer -->
     <div class="container">
       <div class="hero-inner hero-overlay">
         <div class="hero-copy">
-          <h1>Mechanical Engineer</h1>
-          <p>Dynamical Systems &amp; Controls · MEMS</p>
+          <!-- FIXED: homepage H1 should be your name -->
+          <h1>Weiran (Charles) Zhou</h1>
+          <p class="lead">Mechanical Engineer · Dynamical Systems &amp; Controls · MEMS</p>
           <p class="sub">
             I design and build intelligent electromechanical and microfluidic systems —
             robots and devices that sense, adapt, and perform reliably in the real world.
@@ -49,18 +51,24 @@
     </div>
   </section>
 
-  <main>
+  <main id="main">
     <section id="projects" class="section">
       <div class="container">
         <h2>Featured Projects</h2>
+
         <div class="grid">
           <!-- Autonomous Submersible Robot -->
           <a class="card" href="projects/autoSubmersible.html">
-            <img src="assets/img/subhero.jpg" alt="Autonomous Submersible Robot">
+            <img
+              src="assets/img/subhero.jpg"
+              alt="Autonomous Submersible Robot"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="card-body">
               <h3>Autonomous Submersible with Buoyancy Control</h3>
               <p>
-                Autonomous submersible with PID-controlled buoyancy, bottom detection, and Wi-Fi telemetry in a 17-ft pressure-rated housing.
+                Closed-loop buoyancy control with bottom detection and Wi-Fi telemetry in a 17-ft pressure-rated housing.
               </p>
               <p><em>Most Technical Award</em></p>
               <p class="meta">SolidWorks · ESP32 · Embedded Systems · Control</p>
@@ -69,11 +77,16 @@
 
           <!-- Multi-motor Control Interface -->
           <a class="card" href="projects/multiMotorControl.html">
-            <img src="assets/img/motorsetup2.jpg" alt="Multi-motor Control Interface setup">
+            <img
+              src="assets/img/motorsetup2.jpg"
+              alt="Multi-motor Control Interface setup"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="card-body">
               <h3>Multi-Motor CAN Control Interface</h3>
               <p>
-                Python GUI for real-time CAN-based MIT-mode control of CubeMars actuators with live gain tuning and data logging.
+                Real-time CAN control for CubeMars actuators (MIT mode) with gain tuning, telemetry, and data logging.
               </p>
               <p class="meta">Python · Tkinter · CAN · Embedded Control</p>
             </div>
@@ -81,11 +94,16 @@
 
           <!-- Electrokinetic Injection COMSOL Simulation -->
           <a class="card" href="projects/ekiComsol.html">
-            <img src="assets/img/Concentration%20of%20Fluorescein.jpg" alt="Fluorescein concentration visualization">
+            <img
+              src="assets/img/Concentration%20of%20Fluorescein.jpg"
+              alt="Fluorescein concentration visualization"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="card-body">
               <h3>Electrokinetic Injection Modeling in Microfluidics</h3>
               <p>
-                COMSOL multiphysics model of electroosmotic flow and ion transport in a cross-channel microfluidic chip to guide electrokinetic injection protocols.
+                COMSOL model of EOF and ion transport in a cross-channel chip to guide electrokinetic injection protocols.
               </p>
               <p class="meta">COMSOL · Microfluidics · EOF · Data Analysis</p>
             </div>
@@ -94,73 +112,89 @@
       </div>
     </section>
 
-    <!-- More (non-featured) projects -->
+    <!-- More projects -->
     <section id="more-projects" class="section alt">
       <div class="container">
         <h2>More Projects</h2>
 
-        <!--
-          NEW STRUCTURE: thumbnail + text row
-          - Put thumbnails in: assets/img/thumbs/
-          - Suggested size: 256x256 (square), compressed
-          - The CSS you added styles:
-              .more-projects-item, .more-projects-link, .more-projects-thumb, .more-projects-text
-        -->
-        <div class="more-projects-item">
+        <!-- Updated structure: single container of links (cleaner + easier to style) -->
+        <div class="more-projects" aria-label="More projects list">
           <a class="more-projects-link" href="projects/resonator.html">
-            <img class="more-projects-thumb" src="assets/img/combdrive.png" alt="MEMS resonator thumbnail">
+            <img
+              class="more-projects-thumb"
+              src="assets/img/combdrive.png"
+              alt="MEMS resonator thumbnail"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="more-projects-text">
               <h3>MEMS Resonator for Picogram-Scale Mass Sensing</h3>
               <p>
-                Design and sensitivity analysis of a comb-drive MEMS resonator for mass sensing; derives performance limits from COMSOL-informed effective mass/stiffness and connects Q/noise to minimum detectable mass.
+                Comb-drive resonator modeling and sensitivity limits using COMSOL-informed effective mass and stiffness.
               </p>
             </div>
           </a>
-        </div>
 
-        <div class="more-projects-item">
           <a class="more-projects-link" href="projects/samplingFreq.html">
-            <img class="more-projects-thumb" src="assets/img/motorResponseTile.png" alt="DC motor sampling thumbnail">
+            <img
+              class="more-projects-thumb"
+              src="assets/img/motorResponseTile.png"
+              alt="DC motor sampling thumbnail"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="more-projects-text">
               <h3>Sampling Frequency Effects in DC Motor Control</h3>
               <p>
-                Experimental study of how loop rate impacts tracking, stability, overshoot, and disturbance rejection; includes logging, frequency sweeps, and practical sampling-rate guidance.
+                Frequency-sweep experiments showing how loop rate impacts tracking error, overshoot, and disturbance rejection.
               </p>
             </div>
           </a>
-        </div>
 
-        <div class="more-projects-item">
           <a class="more-projects-link" href="projects/hvs_gui.html">
-            <img class="more-projects-thumb" src="assets/img/hvs_gui.jpg" alt="High-voltage sequencing thumbnail">
+            <img
+              class="more-projects-thumb"
+              src="assets/img/hvs_gui.jpg"
+              alt="High-voltage sequencing thumbnail"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="more-projects-text">
               <h3>Programmable High-Voltage Sequencing for Electrokinetic Microfluidics</h3>
               <p>
-                Python interface for LabSmith HVS448 to script high-voltage waveforms, automate electrokinetic pumping sequences, and log current/voltage for analysis.
+                Python interface for LabSmith HVS448 to script waveforms, automate sequences, and log voltage/current.
               </p>
             </div>
           </a>
-        </div>
 
-        <div class="more-projects-item">
           <a class="more-projects-link" href="projects/pawlClutch.html">
-            <img class="more-projects-thumb" src="assets/img/pawlclutch.jpg" alt="Pawl clutch thumbnail">
+            <img
+              class="more-projects-thumb"
+              src="assets/img/pawlclutch.jpg"
+              alt="Pawl clutch thumbnail"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="more-projects-text">
               <h3>Pawl Clutch for an Untethered Jumping Robot</h3>
               <p>
-                Lightweight pawl clutch with a Nitinol-actuated latch to release outward-biased pawls, enabling rapid engagement of a flywheel for energy transfer in an untethered jumping robot.
+                Lightweight clutch with a Nitinol-triggered latch for reliable, repeatable energy release.
               </p>
             </div>
           </a>
-        </div>
 
-        <div class="more-projects-item">
           <a class="more-projects-link" href="projects/torsionalRig.html">
-            <img class="more-projects-thumb" src="assets/img/torsionmeter.jpg" alt="Torsional stiffness rig thumbnail">
+            <img
+              class="more-projects-thumb"
+              src="assets/img/torsionmeter.jpg"
+              alt="Torsional stiffness rig thumbnail"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="more-projects-text">
               <h3>Torsional Stiffness Measurement for Soft Robotics</h3>
               <p>
-                3D-printed torsional stiffness apparatus for soft robotic arms, delivering ~0.1 Nm/deg resolution and &lt; ±5% trial variance as a low-cost alternative to a commercial torque sensor.
+                3D-printed apparatus achieving ~0.1 Nm/deg resolution with &lt; ±5% trial variance as a low-cost alternative.
               </p>
             </div>
           </a>
