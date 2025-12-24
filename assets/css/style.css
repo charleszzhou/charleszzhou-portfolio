@@ -70,18 +70,28 @@ code {
 
 /* =========================================================
    HERO (index) — full-bleed banner + frosted text overlay
+   IMPORTANT: Works best if your index.html hero structure is:
+     <section class="hero">
+       <div class="hero-media"><img ...></div>
+       <div class="container">
+         <div class="hero-inner hero-overlay">
+           <div class="hero-copy">...text/buttons...</div>
+         </div>
+       </div>
+     </section>
    ========================================================= */
 
 .hero {
   position: relative;
-  padding: 0;
-  background: #000;
+  padding: 0; /* remove gap above image */
+  background: #000; /* behind image edges */
   overflow: hidden;
 }
 
+/* remove the old top padding that made the “gap above the image” */
 .hero .container { padding: 0; }
 
-/* Full-bleed hero banner image */
+/* Full-bleed hero banner image (full viewport width) */
 .hero-media {
   position: relative;
   width: 100vw;
@@ -91,14 +101,14 @@ code {
 
 .hero-media img {
   width: 100%;
-  height: 100%;
+  height: 100%; /* banner height */
   object-fit: cover;
   display: block;
   border-radius: 0;
   box-shadow: none;
 }
 
-/* Overlay layout container */
+/* Overlay layout container (sits on top of banner) */
 .hero-inner.hero-overlay {
   position: absolute;
   inset: 0;
@@ -116,12 +126,13 @@ code {
   padding: 22px 22px 20px;
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(15, 23, 42, 0.72);
+  background: rgba(15, 23, 42, 0.72); /* dark slate */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 18px 50px rgba(0,0,0,0.28);
 }
 
+/* Readability on top of photo */
 .hero-copy h1 { color: #ffffff; }
 .hero-copy p,
 .hero-copy .sub { color: rgba(255,255,255,0.90); }
@@ -144,7 +155,7 @@ code {
   gap: 8px;
 }
 
-/* Buttons on hero overlay */
+/* Buttons when used on hero overlay */
 .hero-copy .btn { background: #111827; }
 .hero-copy .btn.outline {
   background: rgba(255,255,255,0.08);
@@ -152,7 +163,7 @@ code {
   border: 1px solid rgba(255,255,255,0.35);
 }
 
-/* Default outline button */
+/* Default outline button (non-hero contexts) */
 .btn.outline { background: transparent; color: #111827; border: 1px solid #111827; }
 .btn:hover { opacity: .9; }
 
@@ -173,6 +184,8 @@ code {
   overflow: hidden;
   transition: transform .12s ease, box-shadow .12s ease;
 }
+
+/* Square thumbnails (assumes original photos are square) */
 .card img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -180,6 +193,7 @@ code {
   object-fit: cover;
   display: block;
 }
+
 .card-body { padding: 14px 14px 16px; }
 .card h3 { margin: 0 0 6px; font-size: 18px; }
 .card p { margin: 0 0 8px; color: #374151; }
@@ -187,24 +201,30 @@ code {
 .card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.08); }
 
 /* =========================================================
-   More Projects (index) — WITH THUMBNAILS
+   More Projects list (index) — WITH THUMBNAILS
+   Use this HTML structure for each item:
+     <div class="more-projects-item">
+       <a class="more-projects-link" href="...">
+         <img class="more-projects-thumb" src="assets/img/thumbs/....jpg" alt="...">
+         <div class="more-projects-text">
+           <h3>Title</h3>
+           <p>One-liner</p>
+         </div>
+       </a>
+     </div>
    ========================================================= */
 
-/* Keep old list styling (still fine if used elsewhere) */
+/* Keep old list styling (still fine) */
 .project-list { margin: 0; padding-left: 18px; }
 .project-list li { margin: 10px 0; }
 .project-list strong { color: #111827; }
 
-/* Use a variable so size changes are centralized */
-:root {
-  --mp-thumb: 112px; /* 2x of 56px */
-}
-
+/* New thumbnail row layout */
 .more-projects-item { margin: 10px 0; }
 
 .more-projects-link {
   display: grid;
-  grid-template-columns: var(--mp-thumb) 1fr; /* <- drives layout */
+  grid-template-columns: 112px 1fr; /* 2x bigger than 56px */
   gap: 14px;
   align-items: center;
 
@@ -220,13 +240,10 @@ code {
 }
 
 .more-projects-thumb {
-  width: var(--mp-thumb) !important;
-  height: var(--mp-thumb) !important;
-  min-width: var(--mp-thumb) !important;
-  min-height: var(--mp-thumb) !important;
-  max-width: var(--mp-thumb) !important;
-  max-height: var(--mp-thumb) !important;
-
+  width: 112px;
+  height: 112px;
+  min-width: 112px;   /* prevents grid from squeezing it */
+  min-height: 112px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
@@ -257,7 +274,7 @@ code {
   box-shadow: 0 10px 24px rgba(0,0,0,.06);
 }
 
-/* Meta text */
+/* Meta text (used under videos/links) */
 .meta { color: #6b7280; font-size: 14px; margin-top: 6px; }
 
 /* PDF links (Option A) */
@@ -309,7 +326,7 @@ code {
 .video {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
+  padding-top: 56.25%; /* 16:9 */
   border-radius: 14px;
   overflow: hidden;
   margin: 0.75rem 0 0.5rem;
@@ -344,12 +361,18 @@ code {
   }
 }
 
-/* Mobile thumbnail sizing */
+/* Slightly tighter More Projects rows on small screens */
 @media (max-width: 520px) {
-  :root { --mp-thumb: 96px; }
-
   .more-projects-link {
-    gap: 12px;
+    grid-template-columns: 96px 1fr; /* still big on mobile */
     padding: 10px;
+    gap: 12px;
+  }
+  .more-projects-thumb {
+    width: 96px;
+    height: 96px;
+    min-width: 96px;
+    min-height: 96px;
+    border-radius: 12px;
   }
 }
