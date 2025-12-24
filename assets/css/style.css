@@ -103,7 +103,7 @@ code {
 
 .hero-media img {
   width: 100%;
-  height: 100%; /* banner height */
+  height: 100%;
   object-fit: cover;
   display: block;
   border-radius: 0;
@@ -202,10 +202,70 @@ code {
 .card .meta { font-size: 14px; color: #6b7280; }
 .card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.08); }
 
-/* More Projects list (index) */
+/* =========================================================
+   More Projects list (index) — WITH THUMBNAILS
+   Use this HTML structure for each item:
+     <div class="more-projects-item">
+       <a class="more-projects-link" href="...">
+         <img class="more-projects-thumb" src="assets/img/thumbs/....jpg" alt="...">
+         <div class="more-projects-text">
+           <h3>Title</h3>
+           <p>One-liner</p>
+         </div>
+       </a>
+     </div>
+   If you currently use <ul class="project-list">, this still works:
+   - keep the <ul>, but put the div inside each <li>.
+   ========================================================= */
+
+/* Keep old list styling (still fine) */
 .project-list { margin: 0; padding-left: 18px; }
 .project-list li { margin: 10px 0; }
 .project-list strong { color: #111827; }
+
+/* New thumbnail row layout */
+.more-projects-item { margin: 10px 0; }
+
+.more-projects-link {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
+  align-items: center;
+
+  text-decoration: none;
+  color: inherit;
+
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.more-projects-link:hover {
+  background: rgba(17, 24, 39, 0.04);
+}
+
+.more-projects-thumb {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  border: 1px solid #e5e7eb;
+  background: #f3f4f6;
+}
+
+.more-projects-text h3 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.more-projects-text p {
+  margin: 4px 0 0;
+  color: #374151;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
 
 /* Project pages */
 .lead { color: #374151; margin-bottom: 14px; }
@@ -300,5 +360,19 @@ code {
   .hero-copy {
     margin-right: 0;
     width: min(640px, 96vw);
+  }
+}
+
+/* Slightly tighter More Projects rows on small screens */
+@media (max-width: 520px) {
+  .more-projects-link {
+    grid-template-columns: 48px 1fr;
+    padding: 8px;
+    gap: 10px;
+  }
+  .more-projects-thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
   }
 }
