@@ -2,17 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Autonomous Submersible with Buoyancy Control — Charles Zhou</title>
+  <title>Autonomous Submersible with Buoyancy Control — Weiran (Charles) Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Autonomous submersible robot with closed-loop buoyancy control, bottom detection, and post-mission wireless data transfer. Validated to 17 ft; Most Technical Project award.">
+
+  <meta property="og:title" content="Autonomous Submersible with Buoyancy Control — Weiran (Charles) Zhou">
+  <meta property="og:description" content="Closed-loop buoyancy control with depth sensing and bottom detection. Validated to 17 ft; Most Technical Project award.">
+  <meta property="og:type" content="website">
 
   <!-- Same stylesheet as index (relative path from /projects/) -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">← Back to Portfolio</a>
-      <nav class="nav">
+      <nav class="site-nav" aria-label="Primary">
         <a href="../index.html#projects">Projects</a>
         <a href="../index.html#about">About</a>
         <a href="../index.html#contact">Contact</a>
@@ -23,81 +30,89 @@
   <main class="section">
     <div class="container narrow">
       <h1>Autonomous Submersible with Buoyancy Control</h1>
-      <p class="lead">
-        Depth Sensing and Bottom Detection
-      </p>
+      <p class="lead">Depth Sensing and Bottom Detection</p>
 
       <h2>Executive Summary</h2>
       <p>
-        Designed and built an autonomous submersible robot for underwater depth measurement in cliff-diving environments. 
-        The system uses pressure-feedback-based buoyancy control to autonomously descend, detect the bottom, and resurface while maintaining stability in a highly nonlinear fluid environment. 
-        Sensor data and images are logged onboard and transmitted wirelessly after resurfacing. The vehicle was validated to a depth of 17 ft and awarded <em>Most Technical Project</em>.
+        Designed and built an untethered autonomous submersible for depth measurement in cliff-diving environments.
+        The robot uses pressure-feedback buoyancy control to descend, detect the bottom, and resurface autonomously.
+        Validated to 17 ft and awarded <em>Most Technical Project</em>.
       </p>
 
       <!-- HERO IMAGE -->
-      <img class="hero-img" src="../assets/img/subhero.jpg" alt="Autonomous submersible robot hero image">
+      <img
+        class="hero-img"
+        src="../assets/img/subhero.jpg"
+        alt="Autonomous submersible robot hero image"
+        decoding="async"
+      >
 
-      <h2>Problem & Constraints</h2>
+      <h2>Problem &amp; Constraints</h2>
       <p>
-        Cliff-diving safety requires reliable depth information in locations where visibility is poor and manual measurement is unsafe. 
-        The system needed to operate untethered, survive repeated submersion, maintain stable buoyancy control under nonlinear hydrodynamic effects, 
-        and reliably recover data without requiring continuous underwater communication.
+        Cliff-diving safety requires reliable depth information where visibility is poor and manual measurement is unsafe.
+        The system needed to:
       </p>
+      <ul>
+        <li>Operate <strong>untethered</strong> with autonomous mission logic</li>
+        <li>Survive repeated submersion with a <strong>waterproof, pressure-rated housing</strong></li>
+        <li>Maintain stable buoyancy control under <strong>nonlinear fluid dynamics</strong> and sensor noise</li>
+        <li>Recover data reliably without requiring continuous underwater communication</li>
+      </ul>
 
       <h2>System Architecture</h2>
       <p>
-        The robot consists of a sealed pressure-rated housing containing an embedded control system, pressure and temperature sensors, onboard data storage, 
-        and a syringe-pump-driven buoyancy bladder. 
-        An ESP32 microcontroller coordinates sensing, closed-loop control, mission logic, data logging, and post-mission wireless communication upon resurfacing.
+        The robot integrates a pressure-rated enclosure, pressure/temperature sensing, onboard storage, and a syringe-pump-driven buoyancy bladder.
+        An ESP32 coordinates sensing, closed-loop control, mission logic, and post-mission wireless transfer upon resurfacing.
       </p>
 
       <h2>Autonomous Operation Sequence</h2>
       <ol>
-        <li>Robot is deployed at the water surface and autonomous descent is triggered via Wi-Fi (phone).</li>
-        <li>Pressure feedback is used to regulate buoyancy via closed-loop control.</li>
-        <li>Bottom contact is detected using stabilized pressure readings.</li>
-        <li>Buoyancy is reversed to initiate ascent.</li>
-        <li>Upon resurfacing, collected depth, temperature, and image data is transmitted wirelessly.</li>
+        <li>Deploy at the surface and trigger the mission via Wi-Fi (phone).</li>
+        <li>Regulate buoyancy using closed-loop control from pressure feedback.</li>
+        <li>Detect bottom contact using stabilized pressure readings.</li>
+        <li>Reverse buoyancy to initiate ascent.</li>
+        <li>After resurfacing, transmit logged depth/temperature data and images wirelessly.</li>
       </ol>
 
-
-      <h2>Control & Sensing</h2>
+      <h2>Control &amp; Sensing</h2>
       <p>
-        Vertical motion is regulated using a closed-loop PID controller driven by pressure sensor feedback. 
-        Pressure readings are converted to depth via the static water column relationship, enabling robust depth estimation independent of visual conditions. 
-        Control gains were tuned to balance response speed with stability in the presence of fluid nonlinearities and sensor noise.
+        Vertical motion is regulated using closed-loop PID control driven by pressure sensor feedback.
+        Pressure is converted to depth using the static water column relationship, enabling robust estimation independent of visual conditions.
+        Gains were tuned to balance response speed and stability in the presence of nonlinearities and noise.
       </p>
 
-      <h2>Mechanical & Electrical Implementation</h2>
+      <h2>Mechanical &amp; Electrical Implementation</h2>
       <p>
-        Buoyancy control is achieved using a syringe-pump-driven bladder system, allowing precise volumetric adjustment without external thrusters. 
-        The housing was fabricated from vacuum-formed PETG with epoxy-sealed bulkheads to ensure waterproofing under repeated submersion. 
+        Buoyancy control is achieved using a syringe-pump-driven bladder for precise volume adjustment without external thrusters.
+        The housing was vacuum-formed from PETG with epoxy-sealed bulkheads to maintain waterproofing under repeated trials.
         Electronics were modularized to simplify integration, sealing, and debugging.
       </p>
 
-      <h2>Data Handling & Telemetry</h2>
+      <h2>Data Handling &amp; Telemetry</h2>
       <p>
-        All sensor measurements and images are logged locally during the mission. 
-        Wireless communication is enabled only after resurfacing, ensuring reliable data recovery without requiring live underwater telemetry or continuous connectivity.
+        Sensor measurements and images are logged locally during the mission.
+        Wireless communication is enabled only after resurfacing to ensure reliable recovery without requiring live underwater telemetry.
       </p>
 
-      <h2>Outcome & Validation</h2>
+      <h2>Outcome &amp; Validation</h2>
       <ul>
-        The completed system demonstrated reliable autonomous depth measurement through closed-loop buoyancy control. 
-        The robot consistently descended, detected the bottom, resurfaced autonomously, and recovered onboard data across repeated trials. 
-        The vehicle was validated to a maximum depth of 17 ft with no water ingress and consistent sensor performance,
-        earning the <em>Most Technical Project</em> award for system complexity and execution.
+        <li>Reliable autonomous descent, bottom detection, and resurfacing across repeated trials</li>
+        <li>Validated to <strong>17 ft</strong> with <strong>no water ingress</strong> and consistent sensor performance</li>
+        <li>Recognized with <em>Most Technical Project</em> for system complexity and execution</li>
       </ul>
 
       <h2>Key Engineering Takeaways</h2>
       <ul>
-        <li>Designing stable feedback control in real-world fluid environments requires careful handling of nonlinear dynamics and sensor uncertainty.</li>
-        <li>System-level integration — not individual subsystems — ultimately determines reliability in autonomous hardware.</li>
-        <li>Robust mission logic and failure handling are as critical as mechanical and control design in untethered systems.</li>
+        <li>Stable feedback control in fluids requires explicit handling of nonlinear dynamics and sensor uncertainty.</li>
+        <li>System-level integration and failure-aware mission logic determine real-world reliability.</li>
+        <li>Designing for data recovery (not just autonomy) is critical in untethered deployments.</li>
       </ul>
 
-                  <h2>Tools &amp; Skills</h2>
-      <p>ESP32 · Embedded C++ · Closed-Loop Control (PID) · Pressure Sensing & Calibration · Waterproof Mechanical Design · Systems Integration · Rapid Prototyping (PETG, Vacuum Forming)</p>
+      <h2>Tools &amp; Skills</h2>
+      <p>
+        ESP32 · Embedded C++ · Closed-Loop Control (PID) · Pressure Sensing &amp; Calibration · Waterproof Mechanical Design ·
+        Systems Integration · Rapid Prototyping (PETG, Vacuum Forming)
+      </p>
 
       <h2>Media</h2>
 
@@ -106,21 +121,36 @@
 
       <div class="grid">
         <a class="card" href="../assets/img/suboneside.jpg" target="_blank" rel="noopener">
-          <img src="../assets/img/suboneside.jpg" alt="Submersible robot — side view 1">
+          <img
+            src="../assets/img/suboneside.jpg"
+            alt="Submersible robot — side view"
+            loading="lazy"
+            decoding="async"
+          >
           <div class="card-body">
             <p class="meta">Submersible — side view</p>
           </div>
         </a>
 
         <a class="card" href="../assets/img/subotherside.jpg" target="_blank" rel="noopener">
-          <img src="../assets/img/subotherside.jpg" alt="Submersible robot — side view 2">
+          <img
+            src="../assets/img/subotherside.jpg"
+            alt="Submersible robot — other side view"
+            loading="lazy"
+            decoding="async"
+          >
           <div class="card-body">
             <p class="meta">Submersible — other side</p>
           </div>
         </a>
 
         <a class="card" href="../assets/img/17ft_test.jpg" target="_blank" rel="noopener">
-          <img src="../assets/img/17ft_test.jpg" alt="Submersible robot 17 ft test">
+          <img
+            src="../assets/img/17ft_test.jpg"
+            alt="Submersible robot 17 ft depth test"
+            loading="lazy"
+            decoding="async"
+          >
           <div class="card-body">
             <p class="meta">17 ft depth test</p>
           </div>
@@ -132,6 +162,7 @@
         <iframe
           src="https://www.youtube.com/embed/kg5mujQdcuM"
           title="Autonomous Submersible Robot — complete demo"
+          referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
@@ -145,6 +176,7 @@
         <iframe
           src="https://www.youtube.com/embed/Zkr1iaiHSFA"
           title="Syringe pump buoyancy demo (YouTube Shorts)"
+          referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
