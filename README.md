@@ -70,8 +70,8 @@ COMSOL multiphysics simulation of electrokinetic injection (pinch & dispense), c
 │   ├── autoSubmersible.html
 │   ├── multiMotorControl.html
 │   ├── ekiComsol.html
-│   ├── mems_resonator.html
-│   ├── motor_sampling.html
+│   ├── resonator.html
+│   ├── samplingFreq.html
 │   ├── pawlClutch.html
 │   └── torsionalRig.html
 ├── assets/
