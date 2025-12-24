@@ -2,17 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Torsional Stiffness Measurement for Soft Robotics — Charles Zhou</title>
+  <title>Torsional Stiffness Measurement for Soft Robotics — Weiran (Charles) Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Low-cost torsional stiffness measurement apparatus for soft robotic actuators, achieving ~0.1 Nm/deg resolution and <±5% variance without a commercial torque sensor.">
+
+  <meta property="og:title" content="Torsional Stiffness Measurement for Soft Robotics — Weiran (Charles) Zhou">
+  <meta property="og:description" content="Modular, low-cost rig for quantifying torsional compliance in soft robotic beams with high repeatability.">
+  <meta property="og:type" content="website">
 
   <!-- Same stylesheet as index (relative path from /projects/) -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">← Back to Portfolio</a>
-      <nav class="nav">
+      <nav class="site-nav" aria-label="Primary">
         <a href="../index.html#projects">Projects</a>
         <a href="../index.html#about">About</a>
         <a href="../index.html#contact">Contact</a>
@@ -23,58 +30,66 @@
   <main class="section">
     <div class="container narrow">
       <h1>Torsional Stiffness Measurement for Soft Robotics</h1>
-      <p class="lead">Low-Cost Rig for Quantifying Torsional Compliance in Soft Actuators</p>
+      <p class="lead">Low-Cost Experimental Rig for Quantifying Torsional Compliance</p>
 
       <h2>Executive Summary</h2>
       <p>
-        Built a low-cost apparatus to measure torsional stiffness of soft robotic beams with high resolution (<0.1 Nm/deg) and repeatability, 
-          replacing the need for a $12 K torque sensor.
+        Designed and built a low-cost experimental apparatus to measure the torsional stiffness of soft robotic actuators.
+        The rig achieves ~0.1&nbsp;Nm/deg resolution with &lt;±5&nbsp;% trial variance, enabling repeatable stiffness characterization
+        without the need for an expensive commercial torque sensor (~$12k).
       </p>
 
       <!-- HERO IMAGE -->
-      <img class="hero-img" src="../assets/img/torsionmeter.jpg" alt="Torsional stiffness measurement apparatus">
+      <img
+        class="hero-img"
+        src="../assets/img/torsionmeter.jpg"
+        alt="Torsional stiffness measurement apparatus"
+        loading="lazy"
+        decoding="async"
+      >
 
-      <h2>Problem & Purpose</h2>
-      <p>Soft robotic structures often lack easily measurable torsional properties due to nonlinear compliance and expensive instrumentation. 
-        This rig provides a modular, low-cost method to quantify torque vs.
-        angular deflection reliably across different soft actuators and pressurization levels.</p>
+      <h2>Problem &amp; Purpose</h2>
+      <p>
+        Torsional compliance is a key property in soft robotic structures, but is difficult to measure accurately due to nonlinear
+        deformation and the high cost of precision torque sensors.
+        This project addresses the need for a repeatable, low-cost method to quantify torque–angle relationships
+        across different soft actuator designs and pressurization states.
+      </p>
 
       <h2>System Overview</h2>
-<p>
-  The apparatus uses a pulley-based torque translation mechanism coupled with a bearing-mounted
-  protractor to measure angular displacement under applied torque. Swappable couplers allow testing
-  of different actuator geometries and pressure states, with a consistent calibration workflow
-  ensuring reproducible results.
-</p>
+      <p>
+        The apparatus converts applied loads into known torques using a pulley-based moment arm, while angular deflection is measured
+        via a bearing-mounted protractor assembly.
+        Modular, swappable couplers allow the same setup to be used across different actuator geometries and sizes.
+        A consistent calibration procedure ensures reproducible torque and angle measurements.
+      </p>
 
+      <h2>Key Outcomes</h2>
+      <ul>
+        <li>
+          <strong>High resolution &amp; repeatability:</strong>
+          Achieved ~0.1&nbsp;Nm/deg resolution with &lt;±5&nbsp;% variance across repeated trials.
+        </li>
+        <li>
+          <strong>Modular and adaptable:</strong>
+          Interchangeable couplers support multiple actuator geometries and loading conditions.
+        </li>
+        <li>
+          <strong>Validated stiffness trends:</strong>
+          Measured consistent torsional stiffness–pressure relationships in inflatable soft beams,
+          enabling quantitative comparison between designs.
+        </li>
+      </ul>
 
-<h2>Key Outcomes</h2>
-<ul>
-  <li>
-    <strong>High resolution &amp; repeatability:</strong>
-    Torque resolution ~0.1&nbsp;Nm/deg with &lt;±5&nbsp;% variance across trials.
-  </li>
-  <li>
-    <strong>Modular design:</strong>
-    Easily reconfigurable couplers accommodate multiple actuator sizes and loading conditions.
-  </li>
-  <li>
-    <strong>Validated trends:</strong>
-    Demonstrated consistent stiffness–pressure relationships in inflatable soft beams,
-    enabling quantitative comparison across designs.
-  </li>
-</ul>
-
-
-<h2>Highlights</h2>
-<ul>
-  <li>Modular, 3D-printed construction</li>
-  <li>Repeatable calibration methodology</li>
-  <li>Data analysis pipeline for torque–angle regression</li>
-</ul>
+      <h2>Design Highlights</h2>
+      <ul>
+        <li>Fully 3D-printed, modular mechanical structure</li>
+        <li>Repeatable calibration workflow for torque and angle measurement</li>
+        <li>Data analysis pipeline for torque–angle regression and stiffness extraction</li>
+      </ul>
 
       <h2>Tools &amp; Skills</h2>
-      <p>SolidWorks · 3D Printing · Mechanical Testing · Data Analysis</p>
+      <p>SolidWorks · 3D Printing · Mechanical Testing · Experimental Methods · Data Analysis</p>
 
       <h2>Media</h2>
 
@@ -83,6 +98,7 @@
         <iframe
           src="https://www.youtube.com/embed/8LT2I5Sy5Ig"
           title="Torsional stiffness apparatus demo"
+          referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
