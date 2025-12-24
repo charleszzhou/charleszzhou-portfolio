@@ -228,14 +228,14 @@ code {
 
 .more-projects-link {
   display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 12px;
+  grid-template-columns: 112px 1fr; /* was 56px */
+  gap: 14px;                        /* optional: a touch more spacing */
   align-items: center;
 
   text-decoration: none;
   color: inherit;
 
-  padding: 10px;
+  padding: 12px;                    /* optional: slightly roomier */
   border-radius: 12px;
 }
 
@@ -244,10 +244,10 @@ code {
 }
 
 .more-projects-thumb {
-  width: 56px;
-  height: 56px;
+  width: 112px;   /* was 56px */
+  height: 112px;  /* was 56px */
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px; /* optional: a bit rounder to match size */
   display: block;
   border: 1px solid #e5e7eb;
   background: #f3f4f6;
@@ -366,13 +366,14 @@ code {
 /* Slightly tighter More Projects rows on small screens */
 @media (max-width: 520px) {
   .more-projects-link {
-    grid-template-columns: 48px 1fr;
-    padding: 8px;
-    gap: 10px;
+    grid-template-columns: 96px 1fr; /* was 48px */
+    padding: 10px;
+    gap: 12px;
   }
   .more-projects-thumb {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
+    width: 96px;    /* was 48px */
+    height: 96px;   /* was 48px */
+    border-radius: 12px;
   }
 }
+
