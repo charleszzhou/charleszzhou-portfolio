@@ -19,35 +19,72 @@
 
       <h1>How Sampling Frequency Shapes DC Motor Control Performance</h1>
       <p class="lead">
-        Experimental study of discrete-time control effects on RMS tracking error and transient response
-      </p>
+Experimental Study of Discrete-Time PI Control on DC Motor Response      </p>
 
-      <h2>Objective</h2>
+      <h2>Executive Summary</h2>
       <p>
-        Quantify how controller sampling frequency influences closed-loop DC motor speed regulation,
-        focusing on tracking accuracy and transient behavior in a discrete-time PI controller.
+        Experimentally investigated how discrete-time controller sampling frequency influences closed-loop DC motor speed regulation, 
+        focusing on tracking accuracy and transient behavior with a PI controller across a range of sample rates.
       </p>
 
-      <h2>Experimental Setup</h2>
-      <ul>
-        <li>Discrete-time PI controller implemented on a microcontroller</li>
-        <li>DC motor with quadrature encoder velocity feedback</li>
-        <li>Sampling frequencies ranging from 10 Hz to 100 Hz</li>
-        <li>Step input from 0 → 4 rad/s with high-rate data logging</li>
-      </ul>
+      <img
+        class="hero-img"
+        src="../assets/img/motorResponseTile.png"
+        alt="Motor Response Tile"
+      >
 
-      <h2>Key Results</h2>
-      <ul>
-        <li>RMS tracking error decreases monotonically with sampling frequency</li>
-        <li>Low sampling rates (10–20 Hz) exhibit oscillations and sluggish response</li>
-        <li>Performance gains diminish beyond ~50 Hz, indicating bandwidth limits</li>
-        <li>Higher sampling frequencies reduce overshoot and settling time variability</li>
-      </ul>
+<h2>Problem &amp; Purpose</h2>
+<p>
+  In digital control systems, sampling frequency fundamentally affects controller performance.
+  This study quantifies how sampling rates from low (~10&nbsp;Hz) to high (~100&nbsp;Hz)
+  impact RMS tracking error, transient response, overshoot, and settling time
+  in a DC motor speed regulation task.
+</p>
+
+<hr>
+
+<h2>Experimental Setup</h2>
+<ul>
+  <li>
+    <strong>Controller:</strong>
+    Discrete-time PI controller implemented on a microcontroller.
+  </li>
+  <li>
+    <strong>Plant:</strong>
+    DC motor with quadrature encoder providing velocity feedback.
+  </li>
+  <li>
+    <strong>Sampling Frequencies:</strong>
+    Range of discrete rates from 10&nbsp;Hz to 100&nbsp;Hz.
+  </li>
+  <li>
+    <strong>Input:</strong>
+    Step change from 0 &rarr; 4&nbsp;rad/s with high-rate data logging.
+  </li>
+</ul>
+
+<hr>
+
+<h2>Key Results</h2>
+<ul>
+  <li>
+    RMS tracking error decreases monotonically as sampling frequency increases.
+  </li>
+  <li>
+    Low sampling rates (~10–20&nbsp;Hz) exhibit oscillations and sluggish response.
+  </li>
+  <li>
+    Performance gains diminish beyond ~50&nbsp;Hz, indicating practical bandwidth limits.
+  </li>
+  <li>
+    Higher sampling frequencies reduce both overshoot and variability in settling time.
+  </li>
+</ul>
+
 
       <h2>Tools &amp; Skills</h2>
       <p>
-        Embedded Control · Discrete-Time Systems · DC Motors · PI Control ·
-        Data Logging · MATLAB · Experimental Analysis
+        Embedded Control · Discrete-Time Systems · DC Motors · PI Control · Data Logging · MATLAB · Experimental Analysis
       </p>
 
       <h2>Media</h2>
