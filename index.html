@@ -11,40 +11,35 @@
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-
   <header class="site-header">
     <div class="container">
       <a class="brand" href="./">Weiran (Charles) Zhou</a>
-      <!-- NOTE: use the same class name your CSS expects (likely .site-nav, not .nav) -->
-      <nav class="site-nav">
+      <nav class="nav">
         <a href="#projects">Projects</a>
-        <a href="#more-projects">More</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO: full-bleed banner + frosted overlay -->
+  <!-- HERO: updated to match full-bleed banner + frosted overlay CSS -->
   <section class="hero">
+    <!-- Full-bleed image layer (must be outside the container for true banner) -->
     <div class="hero-media">
       <img src="assets/img/portfoliohero.jpg" alt="Portfolio hero image">
     </div>
 
+    <!-- Overlay layer -->
     <div class="container">
       <div class="hero-inner hero-overlay">
         <div class="hero-copy">
-          <!-- Make homepage title consistent with project pages (specific + name-forward) -->
-          <h1>Weiran (Charles) Zhou</h1>
-          <p class="lead">Mechanical Engineer · Dynamical Systems &amp; Controls · MEMS</p>
-
+          <h1>Mechanical Engineer</h1>
+          <p>Dynamical Systems &amp; Controls · MEMS</p>
           <p class="sub">
             I design and build intelligent electromechanical and microfluidic systems —
             robots and devices that sense, adapt, and perform reliably in the real world.
           </p>
-
           <div class="cta">
             <a class="btn" href="#projects">View Projects</a>
             <a class="btn outline" href="#contact">Get in touch</a>
@@ -55,11 +50,9 @@
   </section>
 
   <main>
-
     <section id="projects" class="section">
       <div class="container">
         <h2>Featured Projects</h2>
-
         <div class="grid">
           <!-- Autonomous Submersible Robot -->
           <a class="card" href="projects/submersible.html">
@@ -98,44 +91,45 @@
             </div>
           </a>
         </div>
-
       </div>
     </section>
 
-    <!-- More projects (thumbnail + text row) -->
+    <!-- More (non-featured) projects -->
     <section id="more-projects" class="section alt">
       <div class="container">
         <h2>More Projects</h2>
 
-        <!-- MEMS -->
+        <!--
+          NEW STRUCTURE: thumbnail + text row
+          - Put thumbnails in: assets/img/thumbs/
+          - Suggested size: 256x256 (square), compressed
+          - The CSS you added styles:
+              .more-projects-item, .more-projects-link, .more-projects-thumb, .more-projects-text
+        -->
         <div class="more-projects-item">
           <a class="more-projects-link" href="projects/mems_resonator.html">
             <img class="more-projects-thumb" src="assets/img/combdrive.png" alt="MEMS resonator thumbnail">
             <div class="more-projects-text">
-              <!-- TITLE FIX: match the project page H1 -->
-              <h3>MEMS Resonator Design (Comb-Drive Mass Sensor)</h3>
+              <h3>Sensitivity-Limited Design of a Comb-Drive MEMS Mass Sensor</h3>
               <p>
-                Design and sensitivity analysis of a comb-drive MEMS resonator for mass sensing; derives performance limits from COMSOL-informed effective mass/stiffness and links Q/noise to minimum detectable mass.
+                Design and sensitivity analysis of a comb-drive MEMS resonator for mass sensing; derives performance limits from COMSOL-informed effective mass/stiffness and connects Q/noise to minimum detectable mass.
               </p>
             </div>
           </a>
         </div>
 
-        <!-- Motor Sampling -->
         <div class="more-projects-item">
           <a class="more-projects-link" href="projects/motor_sampling.html">
             <img class="more-projects-thumb" src="assets/img/motorResponseTile.png" alt="DC motor sampling thumbnail">
             <div class="more-projects-text">
-              <!-- TITLE FIX: match the project page H1 -->
-              <h3>How Sampling Frequency Shapes DC Motor Control Performance</h3>
+              <h3>Sampling-Rate-Limited Performance in Embedded DC Motor Control</h3>
               <p>
-                Experimental study of how loop rate impacts tracking, overshoot, and stability in discrete-time control; includes logging, sweeps, and practical sampling-rate guidance.
+                Experimental study of how loop rate impacts tracking, stability, overshoot, and disturbance rejection; includes logging, frequency sweeps, and practical sampling-rate guidance.
               </p>
             </div>
           </a>
         </div>
 
-        <!-- HVS GUI -->
         <div class="more-projects-item">
           <a class="more-projects-link" href="projects/hvs_gui.html">
             <img class="more-projects-thumb" src="assets/img/hvs_gui.jpg" alt="High-voltage sequencing thumbnail">
@@ -148,27 +142,23 @@
           </a>
         </div>
 
-        <!-- Jumper clutch -->
         <div class="more-projects-item">
           <a class="more-projects-link" href="projects/jumper_clutch.html">
             <img class="more-projects-thumb" src="assets/img/pawlclutch.jpg" alt="Pawl clutch thumbnail">
             <div class="more-projects-text">
-              <!-- TITLE FIX: match the project page H1 -->
-              <h3>Jumper Robot Clutch</h3>
+              <h3>Nitinol-Triggered Pawl Clutch for Untethered Jumping Robots</h3>
               <p>
-                Lightweight pawl clutch with a Nitinol-actuated latch for reliable release and repeatable engagement, enabling rapid energy transfer in an untethered jumping robot.
+                Lightweight pawl clutch with a Nitinol-actuated latch to release outward-biased pawls, enabling rapid engagement of a flywheel for energy transfer in an untethered jumping robot.
               </p>
             </div>
           </a>
         </div>
 
-        <!-- Torsional rig -->
         <div class="more-projects-item">
           <a class="more-projects-link" href="projects/torsional_rig.html">
             <img class="more-projects-thumb" src="assets/img/torsionmeter.jpg" alt="Torsional stiffness rig thumbnail">
             <div class="more-projects-text">
-              <!-- TITLE FIX: match the project page H1 -->
-              <h3>Torsional Stiffness Measurement Apparatus</h3>
+              <h3>Low-Cost Torsional Stiffness Measurement System for Soft Robotics</h3>
               <p>
                 3D-printed torsional stiffness apparatus for soft robotic arms, delivering ~0.1 Nm/deg resolution and &lt; ±5% trial variance as a low-cost alternative to a commercial torque sensor.
               </p>
@@ -206,7 +196,6 @@
         <!-- <p><a href="/Zhou_Resume.pdf">Resume (PDF)</a> · <a href="/Portfolio.pdf">Portfolio (PDF)</a></p> -->
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -218,6 +207,5 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
