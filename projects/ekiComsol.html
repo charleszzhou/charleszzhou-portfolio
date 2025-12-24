@@ -2,29 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Electrokinetic Injection Modeling in Microfluidics — Charles Zhou</title>
+  <title>Electrokinetic Injection Modeling in Microfluidics — Weiran (Charles) Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="COMSOL multiphysics model of electrokinetic injection (pinch & dispense) in a Micronit X8050 cross-channel.">
+
+  <meta name="description" content="2D COMSOL multiphysics model of electrokinetic injection (pinch & dispense) in a cross-channel microfluidic chip, with plug tracking metrics (center position, FWHM, velocity) for experiment matching.">
+
+  <meta property="og:title" content="Electrokinetic Injection Modeling in Microfluidics — Weiran (Charles) Zhou">
+  <meta property="og:description" content="COMSOL simulation of EOF + electrophoresis + ion transport to reproduce pinch–dispense EKI and extract plug metrics (center/FWHM/velocity).">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">← Back to Portfolio</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main class="section">
     <div class="container narrow">
       <h1>Electrokinetic Injection Modeling in Microfluidics</h1>
-      <p class="lead">
-        COMSOL Simulation of EOF and Ion Transport
-      </p>
+      <p class="lead">COMSOL Simulation of EOF and Ion Transport</p>
 
       <h2>Executive Summary</h2>
       <p>
-        Built a 2D COMSOL Multiphysics simulation capturing the electrokinetic injection (EKI) pinch–dispense sequence in a cross-channel microfluidic chip, 
-        enabling extraction of key experimental metrics such as plug center position, full width at half maximum (FWHM), and velocity.
+        Built a 2D COMSOL Multiphysics model of electrokinetic injection (EKI) pinch–dispense in a cross-channel microfluidic chip.
+        The simulation couples electric fields, flow, and species transport to reproduce plug formation and evolution, enabling direct extraction of
+        plug center position, full width at half maximum (FWHM), and velocity for comparison to experiments.
       </p>
 
       <!-- Hero image -->
@@ -32,46 +43,30 @@
         class="hero-img"
         src="../assets/img/Concentration%20of%20Fluorescein.jpg"
         alt="COMSOL fluorescein concentration snapshot"
+        loading="lazy"
+        decoding="async"
       >
 
-      <h2>Problem & Purpose</h2>
+      <h2>Problem &amp; Purpose</h2>
       <p>
-        Electrokinetic injection in microfluidics couples electric fields, electroosmotic flow (EOF), and species transport. 
-        Accurately reproducing this process in simulation helps infer unknown parameters 
-        (e.g., zeta potential, effective diffusivity, pressure offsets) by matching model outputs to experimental plug evolution.
+        EKI couples applied voltages, electroosmotic flow (EOF), electrophoresis, and diffusion, making outcomes sensitive to parameters that are difficult to measure directly.
+        A physics-based simulation helps interpret experiments by matching observed plug motion and broadening to infer effective properties
+        (e.g., zeta potential, diffusivity, and pressure offsets).
       </p>
 
       <h2>Modeling Approach</h2>
       <ul>
-        <li>
-    <strong>Physics Coupling:</strong>
-    Electric currents, creeping flow (Stokes), and Nernst–Planck transport solved together to represent electrophoresis, EOF, convection, and diffusion.
-  </li>
-  <li>
-    <strong>Geometry:</strong>
-    Depth-averaged 2D representation of the Micronit X8050 cross-channel chip.
-  </li>
-  <li>
-    <strong>Boundary Conditions:</strong>
-    Electroosmotic slip applied at channel walls to model EOF.
-  </li>
-  <li>
-    <strong>Mesh Strategy:</strong>
-    Convergence-focused refinement near the junction and initial downstream segment to stabilize plug tracking.
-  </li>
+        <li><strong>Physics coupling:</strong> Electric currents + creeping flow (Stokes) + Nernst–Planck transport to capture EOF, electrophoresis, convection, and diffusion.</li>
+        <li><strong>Geometry:</strong> Depth-averaged 2D representation of a cross-channel chip (Micronit X8050-style junction).</li>
+        <li><strong>Boundary conditions:</strong> Electroosmotic slip at channel walls to model EOF-driven plug transport.</li>
+        <li><strong>Mesh strategy:</strong> Targeted refinement near the junction and early downstream region to stabilize plug tracking and metric extraction.</li>
       </ul>
 
       <h2>Key Outputs</h2>
       <ul>
-  <li>
-    <strong>Quantitative Plug Metrics:</strong>
-    Extracted downstream plug center, FWHM evolution, and velocity time series.
-  </li>
-  <li>
-    <strong>Mechanism Separation:</strong>
-    Demonstrated how EOF-driven convection and field-induced electrophoresis set plug velocity, while diffusion and field stretching determine broadening.
-  </li>
-</ul>
+        <li><strong>Quantitative plug metrics:</strong> Time series of downstream plug center position, FWHM evolution, and velocity.</li>
+        <li><strong>Mechanism insight:</strong> Separated how EOF/electrophoresis set plug advection while diffusion and field-driven stretching govern broadening.</li>
+      </ul>
 
       <h2>Tools &amp; Skills</h2>
       <p>COMSOL Multiphysics · Microfluidics · Electroosmotic Flow · Electrophoresis · Nernst–Planck Transport · Mesh Convergence · Data Extraction</p>
@@ -89,9 +84,11 @@
         <iframe
           src="../assets/pdf/EKIreport.pdf#view=FitH"
           title="EKI COMSOL report PDF"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
         </iframe>
       </div>
+
       <p class="meta">
         If the PDF preview doesn’t render on some browsers, use the “Open EKI Report (PDF)” button above.
       </p>
@@ -99,7 +96,9 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>© <span id="year"></span> Weiran (Charles) Zhou</p></div>
+    <div class="container">
+      <p>© <span id="year"></span> Weiran (Charles) Zhou</p>
+    </div>
   </footer>
 
   <script>
