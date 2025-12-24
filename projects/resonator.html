@@ -2,82 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>MEMS Resonator for Picogram-Scale Mass Sensing — Charles Zhou</title>
+  <title>MEMS Resonator for Picogram-Scale Mass Sensing — Weiran (Charles) Zhou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Design and sensitivity analysis of a comb-drive MEMS resonator for mass sensing with COMSOL-informed effective mass and stiffness extraction.">
+
+  <meta name="description" content="Comb-drive MEMS resonator design for picogram-scale mass sensing with COMSOL-based effective mass/stiffness extraction and feasibility constraints under voltage and fabrication limits.">
+
+  <meta property="og:title" content="MEMS Resonator for Picogram-Scale Mass Sensing — Weiran (Charles) Zhou">
+  <meta property="og:description" content="COMSOL-backed modeling to estimate effective mass/stiffness and set feasibility limits for picogram-scale mass detection via resonance shifts.">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">← Back to Portfolio</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main class="section">
     <div class="container narrow">
       <h1>MEMS Resonator for Picogram-Scale Mass Sensing</h1>
-      <p class="lead">
-        Design & COMSOL-Backed Modeling for Picogram Mass Detection
-      </p>
+      <p class="lead">Design and COMSOL-Backed Modeling for Resonant Mass Detection</p>
 
       <h2>Executive Summary</h2>
       <p>
-        Designed and analyzed a silicon MEMS comb-drive resonator for detecting picogram-scale mass changes via resonant frequency shifts.
-        The work establishes feasibility limits and leverages COMSOL simulation for accurate effective stiffness and mass extraction.
+        Designed and analyzed a silicon comb-drive MEMS resonator to detect picogram-scale mass changes via resonant frequency shifts.
+        Established feasibility constraints under electrical and fabrication limits and used COMSOL to extract effective stiffness and mass
+        for more accurate sensitivity estimates than lumped approximations.
       </p>
 
       <img
         class="hero-img"
         src="../assets/img/combdrive.png"
-        alt="COMSOL Comb Drive Snapshot"
+        alt="COMSOL comb-drive resonator snapshot"
+        loading="lazy"
+        decoding="async"
       >
 
-      <h2>Problem & Purpose</h2>
+      <h2>Problem &amp; Purpose</h2>
       <p>
-        Detecting tiny mass changes (e.g., bacterial mass on the order of picograms) using
-        MEMS resonators requires precise control of resonant behavior under
-        electrical, mechanical, and fabrication constraints
-        (e.g., ≤100&nbsp;V actuation, ~1&nbsp;µm minimum features).
-        Simulation beyond lumped approximations is necessary to capture
-        distributed stiffness and mode effects.
+        Picogram-scale sensing (e.g., bacterial mass loading) demands tight control of resonant behavior under practical constraints
+        such as actuation voltage (≤100&nbsp;V) and minimum feature sizes (~1&nbsp;µm).
+        Distributed stiffness and mode-shape effects can dominate at small scales, so simulation beyond lumped models is required to set
+        credible detectability limits.
       </p>
 
       <h2>Approach</h2>
-<ul>
-  <li>
-    <strong>Analytical Constraints:</strong>
-    Derived detectability limits by linking effective mass <em>m<sub>eff</sub></em> and stiffness <em>k</em> to measurable frequency shifts.
-  </li>
-  <li>
-    <strong>COMSOL Simulation:</strong>
-    Used distributed structural mechanics models to extract fundamental mode shapes, effective stiffness, and effective mass, enabling reliable sensitivity estimates.
-  </li>
-  <li>
-    <strong>Tradeoff Insights:</strong>
-    Identified when simple lumped approximations break down due to significant spring mass and mode-shape influences.
-  </li>
-</ul>
+      <ul>
+        <li>
+          <strong>Analytical sensitivity constraints:</strong>
+          Related measurable frequency shift to <em>m<sub>eff</sub></em> and <em>k</em> to define detectability limits and guide geometry choices.
+        </li>
+        <li>
+          <strong>COMSOL structural modeling:</strong>
+          Extracted fundamental mode shapes plus effective stiffness and effective mass from distributed mechanics to refine sensitivity predictions.
+        </li>
+        <li>
+          <strong>Tradeoff insights:</strong>
+          Identified when spring mass and mode-shape participation invalidate common lumped assumptions for this geometry.
+        </li>
+      </ul>
 
       <h2>Key Outcomes</h2>
-<ul>
-  <li>
-    Feasibility constraints were established linking geometry and material choices
-    to detectable mass resolution.
-  </li>
-  <li>
-    COMSOL-validated design point achieved a detectability margin
-    &ge; 1 for target picogram masses.
-  </li>
-  <li>
-    Demonstrated that common simplified assumptions
-    (e.g., <em>m<sub>eff</sub></em> &asymp; 0.24<em>m<sub>proof&nbsp;mass</sub></em>)
-    do not hold under strict size and stiffness constraints for this geometry.
-  </li>
-</ul>
+      <ul>
+        <li>
+          Established feasibility constraints connecting geometry/material choices to achievable mass resolution.
+        </li>
+        <li>
+          Identified a COMSOL-validated design point achieving a detectability margin of <strong>≥ 1</strong> for target picogram-scale loading.
+        </li>
+        <li>
+          Demonstrated that simplified heuristics (e.g., fixed fractions of proof-mass participation) break down under strict size/stiffness constraints.
+        </li>
+      </ul>
 
       <h2>Tools &amp; Skills</h2>
-      <p>COMSOL · MEMS Modeling · Dynamics & Vibrations · Sensitivity Analysis · Design Tradeoffs</p>
+      <p>COMSOL · MEMS Modeling · Dynamics &amp; Vibrations · Sensitivity Analysis · Design Tradeoffs</p>
 
       <h2>Media</h2>
 
@@ -92,6 +99,7 @@
         <iframe
           src="../assets/pdf/ResonatorDesign.pdf#view=FitH"
           title="MEMS Resonator Design Slides (PDF)"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
           loading="lazy">
         </iframe>
@@ -102,7 +110,9 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>© <span id="year"></span> Weiran (Charles) Zhou</p></div>
+    <div class="container">
+      <p>© <span id="year"></span> Weiran (Charles) Zhou</p>
+    </div>
   </footer>
 
   <script>
