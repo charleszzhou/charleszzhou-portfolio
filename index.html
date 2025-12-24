@@ -62,8 +62,7 @@
               <p>
                 Autonomous submersible with PID-controlled buoyancy, bottom detection, and Wi-Fi telemetry in a 17-ft pressure-rated housing.
               </p>
-                <em>Most Technical Award</em>
-              </p>
+              <p><em>Most Technical Award</em></p>
               <p class="meta">SolidWorks · ESP32 · Embedded Systems · Control</p>
             </div>
           </a>
@@ -99,35 +98,74 @@
     <section id="more-projects" class="section alt">
       <div class="container">
         <h2>More Projects</h2>
-        <ul class="project-list">
-          <li>
-            <strong><a href="projects/mems_resonator.html">Sensitivity-Limited Design of a Comb-Drive MEMS Mass Sensor</a></strong>
-            Design and sensitivity analysis of a comb-drive MEMS resonator for mass sensing;
-            derives performance limits from effective mass/stiffness extraction (COMSOL-informed),
-            and connects transduction, Q, and noise floor to minimum detectable mass.
-          </li>
-          <li>
-            <strong><a href="projects/motor_sampling.html">Sampling-Rate-Limited Performance in Embedded DC Motor Control</a></strong>
-            Experimental study of how control-loop sampling rate impacts DC motor tracking,
-            stability, overshoot, and disturbance rejection; includes logging, frequency sweeps,
-            and practical guidance for selecting sampling rates in embedded controllers.
-          </li>
-          <li>
-            <strong><a href="projects/hvs_gui.html">Programmable High-Voltage Sequencing for Electrokinetic Microfluidics</a></strong>
-            Python interface for LabSmith HVS448 to script high-voltage waveforms,
-            automate electrokinetic pumping sequences, and log current/voltage for analysis.
-          </li>
-          <li>
-            <strong><a href="projects/jumper_clutch.html">Nitinol-Triggered Pawl Clutch for Untethered Jumping Robots</a></strong>
-            A lightweight pawl-based clutch using a Nitinol-actuated latch to release outward-biased pawls, enabling rapid engagement of a flywheel for energy transfer in an untethered jumping robot.
-          </li>
-          <li>
-            <strong><a href="projects/torsional_rig.html">Low-Cost Torsional Stiffness Measurement System for Soft Robotics</a></strong>
-            3D-printed torsional stiffness apparatus for soft robotic arms, delivering
-            ~0.1&nbsp;Nm/deg resolution and &lt; ±5% trial-to-trial variance as a low-cost
-            alternative to a commercial torque sensor.
-          </li>
-        </ul>
+
+        <!--
+          NEW STRUCTURE: thumbnail + text row
+          - Put thumbnails in: assets/img/thumbs/
+          - Suggested size: 256x256 (square), compressed
+          - The CSS you added styles:
+              .more-projects-item, .more-projects-link, .more-projects-thumb, .more-projects-text
+        -->
+        <div class="more-projects-item">
+          <a class="more-projects-link" href="projects/mems_resonator.html">
+            <img class="more-projects-thumb" src="assets/img/thumbs/combdrive.png" alt="MEMS resonator thumbnail">
+            <div class="more-projects-text">
+              <h3>Sensitivity-Limited Design of a Comb-Drive MEMS Mass Sensor</h3>
+              <p>
+                Design and sensitivity analysis of a comb-drive MEMS resonator for mass sensing; derives performance limits from COMSOL-informed effective mass/stiffness and connects Q/noise to minimum detectable mass.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="more-projects-item">
+          <a class="more-projects-link" href="projects/motor_sampling.html">
+            <img class="more-projects-thumb" src="assets/img/thumbs/motorResponseTile.png" alt="DC motor sampling thumbnail">
+            <div class="more-projects-text">
+              <h3>Sampling-Rate-Limited Performance in Embedded DC Motor Control</h3>
+              <p>
+                Experimental study of how loop rate impacts tracking, stability, overshoot, and disturbance rejection; includes logging, frequency sweeps, and practical sampling-rate guidance.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="more-projects-item">
+          <a class="more-projects-link" href="projects/hvs_gui.html">
+            <img class="more-projects-thumb" src="assets/img/thumbs/hvs_gui.jpg" alt="High-voltage sequencing thumbnail">
+            <div class="more-projects-text">
+              <h3>Programmable High-Voltage Sequencing for Electrokinetic Microfluidics</h3>
+              <p>
+                Python interface for LabSmith HVS448 to script high-voltage waveforms, automate electrokinetic pumping sequences, and log current/voltage for analysis.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="more-projects-item">
+          <a class="more-projects-link" href="projects/jumper_clutch.html">
+            <img class="more-projects-thumb" src="assets/img/thumbs/pawlclutch.jpg" alt="Pawl clutch thumbnail">
+            <div class="more-projects-text">
+              <h3>Nitinol-Triggered Pawl Clutch for Untethered Jumping Robots</h3>
+              <p>
+                Lightweight pawl clutch with a Nitinol-actuated latch to release outward-biased pawls, enabling rapid engagement of a flywheel for energy transfer in an untethered jumping robot.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="more-projects-item">
+          <a class="more-projects-link" href="projects/torsional_rig.html">
+            <img class="more-projects-thumb" src="assets/img/thumbs/torsionmeter.png" alt="Torsional stiffness rig thumbnail">
+            <div class="more-projects-text">
+              <h3>Low-Cost Torsional Stiffness Measurement System for Soft Robotics</h3>
+              <p>
+                3D-printed torsional stiffness apparatus for soft robotic arms, delivering ~0.1 Nm/deg resolution and &lt; ±5% trial variance as a low-cost alternative to a commercial torque sensor.
+              </p>
+            </div>
+          </a>
+        </div>
+
       </div>
     </section>
 
